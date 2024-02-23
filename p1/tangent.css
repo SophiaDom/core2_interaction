@@ -4,6 +4,19 @@ body {
     background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
     background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
     }
+p {
+        font-family: "Cabin Sketch", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.1rem;
+      }
+      
+h3, h2 {
+        font-family: "Cabin Sketch", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2rem;
+      }
 p{
     color:white;
 }
@@ -13,6 +26,10 @@ h3{
 a{
     color:hsl(0, 0%, 50%);
 }
+h2{
+    color: white;
+    font-size:1.35rem;
+}
 .first,
 .second,
 .third,
@@ -21,7 +38,25 @@ a{
 .sixth{
     margin: 40px;
     padding: 40px;
-    background-color: hsl(0, 0%, 10%); /* Adjust background color */
-    display:inline-block;
-    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.7);
+    background-color: hsl(0, 0%, 15%); /* Adjust background color */
+    /* display:inline-block; */
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.4);
+}
+.branch{
+    width:fit-content;
+}
+.first{
+    width:40vw;
+}
+.second{
+    width:30vw;
+}
+.third{
+    width:60vw;
+}
+.fourth{
+    width:30vw;
+}
+.fifth{
+    width:40vw;
 }
