@@ -38,7 +38,7 @@ h2{
 .sixth{
     margin: 40px;
     padding: 40px;
-    background-color: hsl(0, 0%, 15%); /* Adjust background color */
+    background:url("blackpaper.png"); /* Adjust background color */
     /* display:inline-block; */
     box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.4);
 }
@@ -59,4 +59,18 @@ h2{
 }
 .fifth{
     width:40vw;
+}
+button{
+    font-family: "Petit Formal Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size:medium; 
+    background:none;
+    color:white;
+    padding: 5px;
+    margin:40px;
+    border:none;
+}
+button:hover{
+    border:solid white 2px;
 }
