@@ -1,3 +1,14 @@
+.cabin-sketch-regular {
+    font-family: "Cabin Sketch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .cabin-sketch-bold {
+    font-family: "Cabin Sketch", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
 h1{
     font-family: "Cabin Sketch", sans-serif;
     font-weight: 700;
@@ -9,21 +20,23 @@ h1{
     text-align:left;
     position:absolute;
     z-index:1;
-    top: 40vh;
+    top: 18vh;
 }
 
+
 img{
-    margin:40px auto;
-    width:100VW;
-    height:auto;
-    position: center top;
+    position: center;
+    align-items: center;
+    margin-left: 10vw;
+    margin-top: 40px;
+    margin-right: 10vw;
+    width:80%;
 }
 body{
     margin:0;
     padding:0;
     height: 100%;
     overflow:hidden;
-    transition: background-color 0.3s ease;
 }
 .hover-link{
     text-decoration:none;
@@ -34,13 +47,13 @@ body{
 }
 @keyframes colorTransition {
     0% {
-        color: black; /* Start with black color */
+        color: black; 
     }
     50% {
-        color: red; /* Transition to red color */
+        color: red; 
     }
     100% {
-        color: black; /* Back to black color */
+        color: black; 
     }
 }
 .hover-link span{
@@ -56,144 +69,162 @@ body{
 .hover-link span:hover{
     color:red;
 }
-.title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-.container{
-    position:relative;
-    z-index:4;
-}
-.icon img{
-    width:50px;
-    position:sticky;
-} 
-.icon{
-    position:fixed;
-    top:-25px;
-    left:15px;
-    z-index:4;
-}
-.menu{
-    position:absolute;
-    top:0;
-    left:0;
-    width: 45vw;
+
+.container {
+    position: relative;
+    width: 100vw;
     height:100vh;
-    background-color: rgba(255, 0, 0, 0.8);
-    transition:0.5s ease;
+    margin: 0 auto;
 }
-ul{
+  
+.Background-Image {
+    width: auto;
+    height: 100vh;
+    display: block;
+    margin: 0 auto;
+  }
+.title{
+    position: absolute;
+    top: 28%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.title h1{
+    color: black;
+    font-size: 3vw;
+}
+#hiddenDiv {
+    display: none;
+    position:absolute;
+    background-color: #c70000;
+    margin:40px;
+    z-index: 10;
+    opacity: 100%;
+    border-radius: 0% 100% 0% 100% / 89% 0% 100% 11%;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.5);
+  }
+
+#hiddenDiv ul {
     list-style-type: none;
-}
-ul li a{
-    display:block;
-    transition: 0,5s ease out;
-}
-p{
+    padding: 0;
+    margin-top:10vh;
+    margin-left: 5vh;
+    text-align: right;
+  }
+#hiddenDiv H1 {
     color:white;
-    font-size:7vw;
+    font-size: 2rem;
+    padding:10px;
+    top:-2vh;
+    margin-left: 20px;
+}
+#hiddenDiv li {
+    padding: 10px;
+    cursor: pointer;
+    color:white;
+    display:block;
     font-family: "Cabin Sketch", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    margin-left:10vw;
-    margin-top:3%;
+  }
+#hiddenDiv li a {
+    text-decoration:none;
+    color:white;
 }
 
-li a{
-    color:white;
-    text-decoration: none;
-    font-family: "Cabin Sketch", sans-serif;
-    font-weight: 700;
-    font-size: 2.5vw;
-    margin-left:0;
-}
-li a:hover{
-    color:black;
-}
-.slide{
-    height:100%;
-    width:28vw;
-    position:absolute;
-    background-color:rgba(255, 0, 0, 0.8);
-    transition: 0.5s ease;
-    transform: translateX(-40vw)
-    margin-top:0;    
-}
-input{
-    display:none;
-    visibility:hidden;
-    -webkit-appearance:none;
-}
-.toggle{
+#hiddenDiv li:hover {
+    background-color: black;
+    width:125px;
+    font-size:large;
+    text-align: center;
+    align-items: right;
+    padding: 10px;
+  }
+#buttonImage {
+    width: 4vw;
     position: absolute;
-    height: 10.5vw;
-    width:10.5vw;
-    top:20px;
-    left:15px;
-    z-index: 10;
-    border-radius:2px;
-    background-image:url(menuicon.png);
+    z-index: 100;
+    margin-left: 40px;
+    margin-top: 40px;
 }
-.toggle img {
-    width:10vw;
-    position: absolute;
-    margin-top: 50%;
-    margin-left:50%;
-    transition: 0.3 ease;
-    z-index:10;
-    transform:translate(-50%,-50%);
+@media screen and (max-width: 675px) {
+    .container{
+        margin-top: 20%;
+    }
+    .title h1{
+        top:-5.75vh;
+        font-size:2.75vw;
+    }
+    #buttonImage{
+        left:39%;
+        top:65vh;
+        width: 40px;
+    }
+    #hiddenDiv{
+        margin-left: 33%;
+        top: 62%;
+        width: 30%;
+        height: 200px;
+        box-shadow: 2px 4px 0px 0px rgba(0, 0, 0, 0.5);
+    }
+    #hiddenDiv li {
+        font-size:small;
+        width:125px;
+  }
+    #hiddenDiv ul{
+    text-align:left;
+  }
+
 }
-  @media only screen and (max-width: 700px) {
-    h1 {
-        font-size: 4.25vw; 
-        margin-left:5.5%;
-        margin-top: 5.5vh;
+  
+@media screen and (min-width: 675px) and (max-width: 900px) {
+    .container{
+        margin-top: 15%;
     }
-    .icon img{
-        width:30px;
+    .title h1{
+        top: -.15vh;
+
     }
-    p{
-        margin-top:100px;
-        margin-left:40px;
-        font-size: 6vw;
+    #hiddenDiv{
+        width: 90%;
+        height:110px;
+        margin-top:-11%;
+        margin-left: 40px;
+        margin-right: 40px;
     }
-    span img{
-        width:35px;
-        margin-left:40px;
-    }
-}
-@media only screen and (min-width: 665px) and (max-width: 1000px) {
-    h1 {
-        font-size: 4.25vw; 
-        margin: top 20vh;
-        margin-left:5%;
-    }
-    p{
-        margin-left:40px;
-        margin-top:130px;
-    }
-    span img{
-        width:50px;
-        margin-left:50px;
-    }
-}
-@media only screen and (min-width: 1000px) {
-    h1 {
-        font-size: 4.25vw; 
-        margin-left: 6%;
-        margin-top:-3%;
-        
-    }
-    p{
-        font-size: 6.5vw;
-        margin-top:180px;
-        margin-left:28px;
-    }
-    span img{
-        width:80px;
-        margin-left:50px;
+    #hiddenDiv li {
+        display:inline-block;
+        margin-top: -10px;
+        margin-right: 40px;
+  }
+    #hiddenDiv h1{
+        font-size:2.5rem;
     }
 }
+  
+@media screen and (min-width: 900px) and (max-width: 1150px){
+    .container{
+        margin-top: 8%;
+    }
+    .title h1{
+        top: 7vh;
+    }
+    #hiddenDiv{
+        width: 15%;
+        height: 35%;
+  }
+    #hiddenDiv h1{
+        font-size:2.5rem;
+        margin-left: 7px;
+    }
+}
+@media screen and (min-width: 1150px){
+     .title h1{
+            top:14vh;
+    }
+    #hiddenDiv{
+        width: 18%;
+    }
+    #hiddenDiv h1{
+        font-size:2.5rem;
+    }
+  }
