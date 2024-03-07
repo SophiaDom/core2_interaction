@@ -1,14 +1,13 @@
 body {
 background-color: #fefefe;
-background-image:  linear-gradient(#00000033 2px, transparent 2px), linear-gradient(90deg, #00000033 1px, transparent 1px), linear-gradient(#00000033 1px, transparent 1px), linear-gradient(90deg, #00000033 1px, #fefefe 1px);
+background-image: linear-gradient(#00000020 2px, transparent 2px), 
+                  linear-gradient(90deg, #00000020 1px, transparent 1px), 
+                  linear-gradient(#00000020 1px, transparent 1px), 
+                  linear-gradient(90deg, #00000020 1px, #fefefe 1px);
 background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
 background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
 
-}
-header{
-    height:30vh;
-    z-index:1;
-}
 p {
     font-family: "Cabin Sketch", sans-serif;
     font-weight: 200;
@@ -16,6 +15,12 @@ p {
     font-size: 1.1rem;
     width:35ch;
   }
+h1{
+    font-family:"Cabin Sketch", sans-serif;
+    position: fixed;
+    font-size:3em;
+    text-align:right;
+}
 h3{
     font-family: "Cabin Sketch", sans-serif;
     font-weight: 700;
@@ -24,18 +29,6 @@ h3{
     max-width: 20ch;
     min-width: 8ch;
   }
-h1 {
-    text-align: right; /* Align text to the right */
-    color: black;
-    max-width: 100vw;
-    height: 100vh; 
-    display: flex; /* Make it a flex container */
-    justify-content: flex-end;
-    font-family: "Cabin Sketch", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 12vw;
-}
 
 .first,
 .second,
@@ -46,8 +39,6 @@ h1 {
 .seventh,
 .eighth {
     background-image: url("../whitepaper.png");
-    display:block;
-    box-sizing:border-box;
     margin: 40px;
     margin-left:25VW;
     padding:40px;
@@ -57,26 +48,16 @@ h1 {
     8px 0 8px -4px rgba(0, 0, 0, 0.5), /* Right shadow */
     -8px 0 8px -4px rgba(0, 0, 0, 0.5);
     min-width: 45vw;
-    /* box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2); */
 }
 a:not(:first-child):not(:last-child) {
-    background-color: #D3D3D3;
+    background-color: transparent;
     display:inline-block;
     margin: 40px;
-    padding:40px;
     box-shadow:
     0 8px 8px -4px rgba(0, 0, 0, 0.5), /* Top shadow */
     0 -8px 8px -4px rgba(0, 0, 0, 0.5), /* Bottom shadow */
     8px 0 8px -4px rgba(0, 0, 0, 0.5), /* Right shadow */
     -8px 0 8px -4px rgba(0, 0, 0, 0.5);
-}
-article{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    height:60vh;
-    overflow-y:auto;
-    width: 100vw;
 }
 #paul{
     background:none;
@@ -86,9 +67,6 @@ article{
 }
 #paul img{
     max-width:400px;
-    background-image:url(../whitepaper.png);
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
-    border-radius:77% 56% 21% 39% / 6% 0% 0% 5%;
 
 }
 #barbara{
@@ -111,14 +89,6 @@ article{
     max-width:500px;
 }
 
-#missing{
-}
-#cy{
-
-}
-#emily{
-
-}
 .first{
     border-radius: 17% 56% 20% 3% / 0% 5% 0% 44% ;
 }
@@ -147,106 +117,6 @@ article{
 .eighth{
     border-radius:60% 56% 52% 71% / 0% 0% 0% 9%;
 }
-/* .toggle img{
-    position:absolute;
-    top:-40;
-    width:100px;
-} */
-/* .icon img{
-    width:50px;
-    position:sticky;
-} 
-.icon{
-    position:fixed;
-    top:-25px;
-    left:15px;
-    z-index:4;
-} */
-ul{
-    list-style-type: none;
-}
-.slide p{
-    color:white;
-    font-size:7vw;
-    font-family: "Cabin Sketch", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-
-}
-
-li a{
-    color:white;
-    text-decoration: none;
-    font-family: "Cabin Sketch", sans-serif;
-    font-weight: 700;
-    font-size: 2.5vw;
-    margin-left:0;
-}
-li a:hover{
-    color:black;
-}
-.slide{
-    height:100%;
-    width:20vw;
-    background-color:rgba(255, 0, 0, 0.8);
-    position:fixed;
-    left:0;
-    top:0;
-    z-index:10;
-}
-.slide p{
-    position: absolute;
-    bottom:30px;
-    padding:10px;
-}
-@media only screen and (max-width: 767px) {
-   .slide{
-    width:100%;
-    height:12vh
-   }
-   hr,
-   br{
-    display:none;
-   }
-   .slide li{
-    line-height:0.85;
-    justify-content: left;
-   }
-   .slide p{
-    margin-right:0;
-   }
-   .first, 
-.second,
-.third,
-.fourth,
-.fifth,
-.sixth,
-.seventh,
-.eighth {
-    margin-left:3VW;
-}
-
-
-}
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-   
-}
-@media only screen and (min-width: 993px) {
-   h3{
-
-   }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-    h3{
-        font-size: 20%;
-    }
-}
-@media only screen and (min-width: 993px) {
-   h3{
-    font-size:
-   }
-}
 #theend{
     font-family: "Cabin Sketch", sans-serif;
     font-weight: 200;
@@ -257,3 +127,54 @@ li a:hover{
     margin-left:30vw;
     height:70vh;
 }
+#hiddenDiv {
+    display: none;
+    position:absolute;
+    background-color: #c70000;
+    margin:40px;
+    z-index: 10;
+    opacity: 100%;
+    border-radius: 0% 100% 0% 100% / 89% 0% 100% 11%;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.5);
+  }
+
+#hiddenDiv ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top:10vh;
+    margin-left: 5vh;
+    text-align: right;
+  }
+#hiddenDiv H1 {
+    color:white;
+    font-size: 2rem;
+    padding:10px;
+    top:-2vh;
+    margin-left: 20px;
+}
+#hiddenDiv li {
+    padding: 10px;
+    cursor: pointer;
+    color:white;
+    display:block;
+    font-family: "Cabin Sketch", sans-serif;
+  }
+#hiddenDiv li a {
+    text-decoration:none;
+    color:white;
+}
+
+#hiddenDiv li:hover {
+    background-color: black;
+    width:125px;
+    font-size:large;
+    text-align: center;
+    align-items: right;
+    padding: 10px;
+  }
+#buttonImage {
+    width: 4vw;
+    position: fixed;
+    margin-left: 40px;
+}
+

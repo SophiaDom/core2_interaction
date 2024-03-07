@@ -1,6 +1,10 @@
 body {
     background-color: #000000;
-    background-image:  linear-gradient(#3d3d3d 2px, transparent 2px), linear-gradient(90deg, #3d3d3d 2px, transparent 2px), linear-gradient(#3d3d3d 1px, transparent 1px), linear-gradient(90deg, #3d3d3d 1px, #000000 1px);
+    background-image: linear-gradient(rgba(61, 61, 61, 0.5) 2px, transparent 2px),
+                      linear-gradient(90deg, rgba(61, 61, 61, 0.5) 2px, transparent 2px),
+                      linear-gradient(rgba(61, 61, 61, 0.5) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(61, 61, 61, 0.5) 1px, #000000 1px);
+
     background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
     background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
     }
@@ -61,7 +65,7 @@ h2{
     width:40vw;
 }
 button{
-    font-family: "Petit Formal Script", cursive;
+    font-family: "Cabin Sketch", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size:medium; 
@@ -74,34 +78,3 @@ button{
 button:hover{
     border:solid white 2px;
 }
-.blackout{
-    background-color:black;
-    width: 40vw;
-    height: 200px;
-    position: absolute;
-    top: 400px;
-}
-.blackout:hover{
-    background-color:transparent ;
-}
-@media only screen and (max-width: 767px) {
-    .blackout{
-        height: 360px;
-        top: 325px;
-    }
-}
-
-/* Media query for screens between 768 and 992 pixels (tablets) */
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-    .blackout{
-        height: 250px;
-        top: 280px;
-    }
-}
-
-/* Media query for screens larger than 992 pixels (desktops) */
-@media only screen and (min-width: 993px) {
-    .blackout{
-        height: 200px;
-        top: 225px;
-    }}

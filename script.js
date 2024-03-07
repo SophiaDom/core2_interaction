@@ -99,13 +99,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.one, .two, .three');
 
     function randomizePositions() {
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+    
         elements.forEach(function(element) {
-            // Set random position
-            element.style.top = Math.random() * 100 + 'px';
-            element.style.bottom = Math.random() * 100 - 'px';
-            element.style.left = Math.random() * 800 + 'px';
+            // Set random position within the viewport
+            const maxTop = viewportHeight - element.offsetHeight;
+            const maxLeft = Math.max(0, viewportWidth - element.offsetWidth); // Ensure left position doesn't go off the screen
+    
+            element.style.top = Math.random() * maxTop + 'px';
+            element.style.left = Math.random() * maxLeft + 'px';
         });
     }
+    
 
     // Randomize positions initially
     randomizePositions();
