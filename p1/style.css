@@ -154,6 +154,34 @@ body{
     .title h1{
         top: -10vh;
     }
+    .container{
+        margin-top: 30%;
+    }
+    #buttonImage{
+        left: 33%;
+        bottom: 40%;
+        width: 6vw;
+    }
+    #hiddenDiv{
+        margin-left: 23%;
+        top: 52%;
+        width: 150px;
+        height: fit-content;
+    }
+    #hiddenDiv h1{
+        font-size:20px;
+        margin:0;
+        margin-top: 10px;
+    }
+    #hiddenDiv li {
+        font-size:10px;
+        width:fit-content;
+        line-height: .75;
+  }
+    #hiddenDiv ul{
+    text-align:left;
+    margin-top:30px;
+  }
 }
 
 @media screen and (min-width: 380px) and (max-width: 675px) {
