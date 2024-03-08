@@ -1,3 +1,6 @@
+html, body{
+    overflow-x:hidden;
+}
 body {
 background-color: #fefefe;
 background-image: linear-gradient(#00000020 2px, transparent 2px), 
@@ -18,8 +21,13 @@ p {
 h1{
     font-family:"Cabin Sketch", sans-serif;
     position: fixed;
-    font-size:3em;
-    text-align:right;
+    font-size:5vw;
+    text-align: right;
+    width:100vw;
+    right:40px;
+    top:2%;
+    z-index:1;
+
 }
 h3{
     font-family: "Cabin Sketch", sans-serif;
@@ -91,6 +99,7 @@ a:not(:first-child):not(:last-child) {
 
 .first{
     border-radius: 17% 56% 20% 3% / 0% 5% 0% 44% ;
+    margin-top: 25%;
 }
 .one-half img{
     background-image:none;
@@ -127,54 +136,14 @@ a:not(:first-child):not(:last-child) {
     margin-left:30vw;
     height:70vh;
 }
-#hiddenDiv {
-    display: none;
-    position:absolute;
-    background-color: #c70000;
-    margin:40px;
-    z-index: 10;
-    opacity: 100%;
-    border-radius: 0% 100% 0% 100% / 89% 0% 100% 11%;
-    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.5);
-  }
-
-#hiddenDiv ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top:10vh;
-    margin-left: 5vh;
-    text-align: right;
-  }
-#hiddenDiv H1 {
-    color:white;
-    font-size: 2rem;
-    padding:10px;
-    top:-2vh;
-    margin-left: 20px;
-}
-#hiddenDiv li {
-    padding: 10px;
-    cursor: pointer;
-    color:white;
-    display:block;
-    font-family: "Cabin Sketch", sans-serif;
-  }
-#hiddenDiv li a {
-    text-decoration:none;
-    color:white;
-}
-
-#hiddenDiv li:hover {
-    background-color: black;
-    width:125px;
-    font-size:large;
-    text-align: center;
-    align-items: right;
-    padding: 10px;
-  }
 #buttonImage {
     width: 4vw;
     position: fixed;
-    margin-left: 40px;
+    margin-left: 20px;
+    margin-top: 4%;
+    transition: transform 0.3s ease;
+    z-index:2;
 }
-
+#buttonImage:hover {
+    transform: rotate(90deg); /* Rotating the element by 90 degrees on hover */
+}

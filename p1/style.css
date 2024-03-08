@@ -145,6 +145,10 @@ body{
     z-index: 100;
     margin-left: 40px;
     margin-top: 40px;
+    transition: transform 0.3s ease;
+}
+#buttonImage:hover {
+    transform: rotate(90deg); /* Rotating the element by 90 degrees on hover */
 }
 @media screen and (max-width: 675px) {
     .container{
