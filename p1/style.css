@@ -150,7 +150,13 @@ body{
 #buttonImage:hover {
     transform: rotate(90deg); /* Rotating the element by 90 degrees on hover */
 }
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 350px) {
+    .title h1{
+        top: -10vh;
+    }
+}
+
+@media screen and (min-width: 380px) and (max-width: 675px) {
     .container{
         margin-top: 20%;
     }

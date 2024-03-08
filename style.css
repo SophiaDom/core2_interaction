@@ -18,6 +18,7 @@ body{
     padding:0;
     overflow: hidden;
     background-size: cover;
+    top:0px;
 }
 a{
     text-decoration: none;
@@ -59,10 +60,16 @@ ul{
     font-size: 10px;
     letter-spacing: 5px;
     margin-left: 40px;
+    position:fixed;
+    top: 30px;
 }
-.larger{
-    font-size: 13px;
+#second{
+    font-size: 10px;
     letter-spacing: 5px;
+    position:fixed;
+    top:30px;
+    right: 40px;
+    margin-left:20px;
 }
 .container.one-hover {
     background-image: url('image-one.jpg');
@@ -107,9 +114,16 @@ ul{
     right: 2em;
     z-index:100;
 }
+.descriptions li{
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+li b{
+    font-size: larger;
+}
 li{
     color:white;
-    font-size: 12px;
+    font-size: 1em;
     letter-spacing: 2px;
     font-weight: 700;
 }
