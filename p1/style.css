@@ -176,11 +176,11 @@ body{
     #hiddenDiv li {
         font-size:10px;
         width:fit-content;
-        line-height: .75;
+        line-height: .5;
   }
     #hiddenDiv ul{
     text-align:left;
-    margin-top:30px;
+    margin-top:25px;
   }
 }
 

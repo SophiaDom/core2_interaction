@@ -27,7 +27,7 @@ h1{
     right:40px;
     top:2%;
     z-index:1;
-
+    text-shadow: 0px 0px 2px white; 
 }
 h3{
     font-family: "Cabin Sketch", sans-serif;
@@ -47,66 +47,60 @@ h3{
 .seventh,
 .eighth {
     background-image: url("../whitepaper.png");
-    margin: 40px;
-    margin-left:25VW;
+    margin:40px;
     padding:40px;
     box-shadow:
     0 8px 8px -4px rgba(0, 0, 0, 0.5), /* Top shadow */
     0 -8px 8px -4px rgba(0, 0, 0, 0.5), /* Bottom shadow */
     8px 0 8px -4px rgba(0, 0, 0, 0.5), /* Right shadow */
     -8px 0 8px -4px rgba(0, 0, 0, 0.5);
-    min-width: 45vw;
+    width: fit-content;
+    height:fit-content;
 }
 a:not(:first-child):not(:last-child) {
     background-color: transparent;
-    display:inline-block;
+    display:block;
     margin: 40px;
-    box-shadow:
-    0 8px 8px -4px rgba(0, 0, 0, 0.5), /* Top shadow */
-    0 -8px 8px -4px rgba(0, 0, 0, 0.5), /* Bottom shadow */
-    8px 0 8px -4px rgba(0, 0, 0, 0.5), /* Right shadow */
-    -8px 0 8px -4px rgba(0, 0, 0, 0.5);
 }
-#paul{
-    background:none;
-    box-shadow: none;
-    margin-left: 30vw;
-    max-width: 20vw;
+#paul img:hover,
+#barbara img:hover,
+#s img:hover,
+#missing img:hover,
+#cy img:hover,
+#emily img:hover{
+    transform: rotate(5deg);
 }
-#paul img{
-    max-width:400px;
-
+#paul img,
+#barbara img,
+#s img,
+#missing img,
+#cy img,
+#emily img{
+    max-height: 80vh;
+    transition:transform .75s ease;
+    margin: 40px;
 }
-#barbara{
-    background:none;
-    box-shadow:none;
+#barbara img,
+#missing img,
+#cy img{
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
 }
-#barbara img{
-    max-width:400px;
-    margin-left: 20vw;
-    justify-content: center;
-    background-image:url(../whitepaper.png);
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+#paul img,
+#s img,
+#emily img{
+    filter: drop-shadow(3px 3px 1px rgba(0,0,0,0.5));
 }
-#s{
-    max-width:400px;
-    background:none;
-    box-shadow:none;
+#missing img{
+    background-image: url(../whitepaper.png);
+    filter: contrast(88%);
+    padding:20px;
 }
-#s img{
-    max-width:500px;
-}
-
 .first{
     border-radius: 17% 56% 20% 3% / 0% 5% 0% 44% ;
     margin-top: 25%;
 }
-.one-half img{
-    background-image:none;
-    max-width: 35vw;
-}
 .second{
-    border-radius:77% 56% 20% 2% / 6% 5% 0% 44%;
+    border-radius:500% 30% 20% 2% / 6% 5% 0% 44%;
 }
 .third{
     border-radius: 77% 56% 20% 0% / 3% 0% 7% 44%;
@@ -133,8 +127,6 @@ a:not(:first-child):not(:last-child) {
     text-decoration:none;
     font-size:4rem;
     color:black;
-    margin-left:30vw;
-    height:70vh;
 }
 #buttonImage {
     width: 4vw;
@@ -146,4 +138,68 @@ a:not(:first-child):not(:last-child) {
 }
 #buttonImage:hover {
     transform: rotate(90deg); /* Rotating the element by 90 degrees on hover */
+}
+#hiddenDiv {
+    display: none;
+    position:fixed;
+    background-color: #c70000;
+    margin:40px;
+    opacity: 1;
+    border-radius: 0% 100% 0% 100% / 89% 0% 100% 11%;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    height: fit-content;
+    width: 30vw;
+}
+#hiddenDiv li{
+    list-style-type: none;
+    color:white;
+    font-size: 1em;
+    padding: 10px;
+    margin-top: -5px;
+}
+#bottom{
+    margin-bottom: 35px; 
+}
+#hiddenDiv li:hover{
+    background-color:black;
+    color:white;
+    width: fit-content;
+}
+#hiddenDiv a{
+    text-decoration: none;
+    color:white;
+}
+#hiddenDivH1{
+    text-align:left;
+    margin-left: 35px;
+    position:static;
+    color:white;
+    padding: 5px;
+    font-size: 2em;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin:0 auto;
+}
+@media only screen and (max-width: 768px) {
+    #hiddenDiv{
+        width: 200px;
+    }
+    .container{
+        grid-template-columns:repeat(1,1fr);
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .container{
+        grid-template-columns:repeat(1,1fr);
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    #hiddenDiv{
+        width: 250px;
+    }
 }
