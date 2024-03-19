@@ -14,3 +14,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 4000); // 5000 milliseconds = 5 seconds
     });
 });
+window.addEventListener('scroll', function() {
+    // Calculate opacity based on scroll position
+    var opacity = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+
+    // Limit opacity between 0 and 1
+    opacity = Math.min(1, Math.max(0, opacity));
+
+    // Update the opacity of the overlay
+    var overlay = document.querySelector('.overlay');
+    overlay.style.opacity = opacity;
+});
+
+
+
+
+  

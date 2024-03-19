@@ -1,14 +1,18 @@
 html, body{
     overflow-x:hidden;
 }
-body {
-background-color: #fefefe;
+body{
+    margin:0;
+    background-color: #fefefe;
 background-image: linear-gradient(#00000020 2px, transparent 2px), 
                   linear-gradient(90deg, #00000020 1px, transparent 1px), 
                   linear-gradient(#00000020 1px, transparent 1px), 
                   linear-gradient(90deg, #00000020 1px, #fefefe 1px);
 background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
 background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+transition: background-color 2s ease;
+    transition: background-color 2s ease;
+    padding-bottom: 200vh;
 }
 
 p {
@@ -20,12 +24,11 @@ p {
   }
 h1{
     font-family:"Cabin Sketch", sans-serif;
-    position: fixed;
-    font-size:5vw;
+    font-size:7vw;
     text-align: right;
-    width:100vw;
-    right:40px;
-    top:2%;
+    width:calc(100vw - 40px);
+    margin-top:2%;
+    margin-right: 40px;
     z-index:1;
     text-shadow: 0px 0px 2px white; 
 }
@@ -43,11 +46,12 @@ h3{
 .third,
 .fourth,
 .fifth,
+.fifthsecond,
 .sixth,
 .seventh,
 .eighth {
     background-image: url("../whitepaper.png");
-    margin:40px;
+    /* margin:40px; */
     padding:40px;
     box-shadow:
     0 8px 8px -4px rgba(0, 0, 0, 0.5), /* Top shadow */
@@ -92,8 +96,10 @@ a:not(:first-child):not(:last-child) {
 }
 #missing img{
     background-image: url(../whitepaper.png);
-    filter: contrast(88%);
+    filter: contrast(98%);
     padding:20px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 17% 56% 20% 3% / 0% 3% 0% 50% ;
 }
 .first{
     border-radius: 17% 56% 20% 3% / 0% 5% 0% 44% ;
@@ -108,7 +114,8 @@ a:not(:first-child):not(:last-child) {
 .fourth{
     border-radius:77% 56% 21% 39% / 6% 0% 0% 5%;
 }
-.fifth{
+.fifth,
+.fifthsecond{
     border-radius:17% 56% 20% 3% / 0% 5% 0% 44%;
 }
 .sixth{
@@ -180,26 +187,208 @@ a:not(:first-child):not(:last-child) {
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin:0 auto;
+    gap: 5px;
+    margin-top:-20%;
+    position:relative;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 775px) {
     #hiddenDiv{
         width: 200px;
     }
     .container{
         grid-template-columns:repeat(1,1fr);
+        margin-top: 0;
+    }
+    .first,
+    .second,
+    .third,
+    .fourth,
+    .fifth,
+    .fifthsecond,
+    .sixth,
+    .seventh,
+    .eighth {
+        width: calc(100vw - 40%);
+        /* margin:5%; */
+        justify-content: center;
+        margin-left: 40px;
+        margin-top: 40px;
+    }
+    p{
+        width: 55vw;
+        align-content: center;
+    }
+    .first{
+        margin-top: 15vh;
+    }
+    #paul img,
+    #barbara img,
+    #s img,
+    #missing img,
+    #cy img, 
+    #emily img{
+        margin-left: 0;
+        width: calc(100vw - 35%);
+        min-width: 200px;
+        height:auto;
+        max-width: 380px;
+    }
+    h3{
+        font-size:1.75rem;
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 775px) and (max-width: 1155px) {
     .container{
         grid-template-columns:repeat(1,1fr);
+        margin-left: 20%;
+    }
+    .first,
+    .second,
+    #s,
+    #cy,
+    .sixth,
+    .eighth{
+        margin-left: -100px;
+    }
+    .seventh,
+    #emily,
+    #missing,
+    #barbara,
+    #paul{
+        margin-left: 200px;
+    }
+    #missing{
+        margin-top: -200px;
+    }
+    #paul{
+        margin-top: -80px;
+    }
+    .second{
+        margin-top:-100px;
+    }
+    .third{
+        margin-top: 40px;
+    }
+    #s{
+        margin-top:-100px;
+    }
+    #cy{
+        margin-top:-400px;
+        margin-left:-110px;
+    }
+    .fifthsecond{
+        margin-left: 100px;
+        margin-top: 40px;
+    }
+    .sixth{
+        margin-top: 40px;
+    }
+    #emily{
+        margin-top:-40px;
+    }
+    .seventh{
+        margin-left: -30px;
+        margin-top: -50px;
+    }
+    .eighth{
+        margin-top: 80px;
     }
 }
 
-@media only screen and (min-width: 1025px) {
-    #hiddenDiv{
-        width: 250px;
+@media only screen and (min-width: 1155px) {
+    #hiddenDiv {
+        width: 80%; /* Adjust width as needed */
+        max-width: 250px; /* Set maximum width */
+        margin: 0 auto; /* Center horizontally */
     }
+    .container{
+        margin-top:0;
+        margin-left: 5%;
+    }
+    .first {
+        margin-left: 5%;
+        margin-top: -10vh; /* Adjust margin for responsiveness */
+    }
+    .second {
+        margin-top: -15vh; /* Adjust margin for responsiveness */
+    }
+    .third {
+        margin-top: 3vh;
+    }
+    
+    #barbara {
+        margin-top: -50vh; /* Adjust margin for responsiveness */
+    }
+    .fourth{
+        margin-top:40px;
+        margin-left: -10%;
+    }
+    .seventh,
+    .sixth,
+    .fifth {
+        margin-left: -20%; /* Adjust margin for responsiveness */
+        margin-top: 10vh; /* Adjust margin for responsiveness */
+    }
+    #missing {
+        margin-top: 100px; /* Adjust margin for responsiveness */
+    }
+    
+    .fifth {
+        margin-left: -5%;
+    }
+    
+    #cy {
+        margin-top: -110vh; /* Adjust margin for responsiveness */
+    }
+    
+    .sixth {
+         /* Adjust margin for responsiveness */
+    }
+    .second{
+        margin-left: 40px;
+    }
+    .seventh {
+        margin-top: 100px;
+        margin-left: 20px; /* Adjust margin for responsiveness */
+    }
+    #s{
+        margin-top: -600px;
+        margin-left: 75px;
+    }
+    .eighth {
+        margin-top:-30%;
+        width: 400px; /* Adjust margin for responsiveness */
+    }
+    .fifthsecond{
+        margin-left: 40px;
+        margin-top: -100vh;
+    }
+    .first {
+    margin-left: 40px;
+    margin-top: 40px;
+}
+    #emily{
+        margin-top: -75vh;
+        margin-left: -20px;
+    }
+}
+.space{
+    height: 50vh;
+    width:300vw;
+}
+#theend{
+    color:black;
+    z-index: 1000000;
+    position: absolute;
+    margin-top: 125vh;
+    font-size: 20vw;
+    transition: font-size 1s ease;
+    margin-left: 15%;
+}
+#theend:hover{
+    font-size: 22vw;
+}
+*:focus{
+    outline:none;
 }

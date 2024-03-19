@@ -32,3 +32,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000); // Adjust the delay to match the transition duration in milliseconds
     });
 });
+
+document.getElementById('hover-link').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent default navigation behavior
+
+  // Add a transition effect to the body element
+  document.body.style.transition = 'opacity 0.5s ease';
+  document.body.style.opacity = '0';
+
+  // Navigate to the target page after the transition is complete
+  setTimeout(function() {
+      window.location.href = event.target.href;
+  }, 500); // Wait for 0.5s (500 milliseconds) before navigating
+});
