@@ -118,14 +118,12 @@ a:not(:first-child):not(:last-child) {
 .fifthsecond{
     border-radius:17% 56% 20% 3% / 0% 5% 0% 44%;
 }
-.sixth{
+.sixth,
+.eighth{
     border-radius:60% 56% 38% 39% / 0% 4% 8% 0%;
 }
 .seventh{
     border-radius:60% 56% 52% 39% / 0% 0% 10% 0%;
-}
-.eighth{
-    border-radius:60% 56% 52% 71% / 0% 0% 0% 9%;
 }
 #theend{
     font-family: "Cabin Sketch", sans-serif;
@@ -139,9 +137,9 @@ a:not(:first-child):not(:last-child) {
     width: 4vw;
     position: fixed;
     margin-left: 20px;
-    margin-top: 4%;
+    margin-top: 1%;
     transition: transform 0.3s ease;
-    z-index:2;
+    z-index:1000000;
 }
 #buttonImage:hover {
     transform: rotate(90deg); /* Rotating the element by 90 degrees on hover */
@@ -156,8 +154,10 @@ a:not(:first-child):not(:last-child) {
     box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
     height: fit-content;
     width: 30vw;
+    z-index: 100000000;
 }
 #hiddenDiv li{
+    font-family:Courier, monospace;
     list-style-type: none;
     color:white;
     font-size: 1em;
@@ -177,6 +177,7 @@ a:not(:first-child):not(:last-child) {
     color:white;
 }
 #hiddenDivH1{
+    font-family: Courier, monospace;
     text-align:left;
     margin-left: 35px;
     position:static;
@@ -294,13 +295,16 @@ a:not(:first-child):not(:last-child) {
     .eighth{
         margin-top: 80px;
     }
+    #hidden-image{
+        margin-left: 40px;
+    }
 }
 
 @media only screen and (min-width: 1155px) {
     #hiddenDiv {
         width: 80%; /* Adjust width as needed */
         max-width: 250px; /* Set maximum width */
-        margin: 0 auto; /* Center horizontally */
+        margin: 40px; /* Center horizontally */
     }
     .container{
         margin-top:0;

@@ -33,15 +33,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.getElementById('hover-link').addEventListener('click', function(event) {
-  event.preventDefault(); // Prevent default navigation behavior
+// Wait for the document to fully load
+document.addEventListener("DOMContentLoaded", function() {
+  // Get the word element
+  let word = document.querySelector(".flash");
 
-  // Add a transition effect to the body element
-  document.body.style.transition = 'opacity 0.5s ease';
-  document.body.style.opacity = '0';
-
-  // Navigate to the target page after the transition is complete
-  setTimeout(function() {
-      window.location.href = event.target.href;
-  }, 500); // Wait for 0.5s (500 milliseconds) before navigating
+  // Toggle the "visible" class every 2 seconds
+  setInterval(function() {
+      word.classList.toggle("visible");
+  }, 1000);
 });
+

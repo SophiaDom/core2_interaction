@@ -31,7 +31,7 @@ h3{
     color:white;
 }
 a{
-    color:hsl(0, 0%, 50%);
+    color:white;
 }
 h2{
     color: white;
@@ -95,9 +95,20 @@ a{
 .blackout h3{
     background-color:black;
     color: black;
-    margin-bottom: -30px;
+    margin-bottom: -50px;
+    margin-top: -40px;
+    width: fit-content;
 }
-.blackout h3:hover{
+.blackout p{
+    background-color: black;
+    color:black;
+    margin-bottom: -55px;
+    width: fit-content;
+    margin-top: -55px;
+    display:flex;
+}
+.blackout h3:hover,
+.blackout p:hover{
     background: transparent;
     color: white;
 }
@@ -128,4 +139,57 @@ h3{
     text-align: center; /* Align text to the center */
     margin-left: auto; /* Set left margin to auto */
     margin-right: auto;
+}
+#enlarge:hover{
+    font-size: 4rem;
+}
+#wordContainer {
+    font-size: 36px;
+  }
+  
+  .letter {
+    display: inline-block;
+    transition: transform 0.5s ease;
+  }
+.psecond,
+.pfirst{
+    padding-bottom: 20px;
+    background:url("blackpaper.png"); /* Adjust background color */
+    padding: 10px;
+    margin:40px;
+    margin-left: 175px;
+    padding-bottom: 100px;
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.4);
+    width: 60vw;
+    height: fit-content;
+
+}
+.
+
+.bfirst{
+    padding-bottom: 20px;
+    background:url("blackpaper.png");
+    padding: 10px;
+    margin:40px;
+    margin-left: 175px;
+    padding-bottom: 100px;
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.4);
+    width: 70vw;
+    height: fit-content;
+}
+ul{
+    list-style-type:none;
+}
+.pfirst .other{
+    padding-bottom: -500px;
+}
+.efirst{
+    background:url("blackpaper.png");
+    padding: 10px;
+    margin:40px;
+    padding-top: 75px;
+    margin-left: 175px;
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.4);
+    width: 35vw;
+    height: fit-content;
 }
