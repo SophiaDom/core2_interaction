@@ -32,15 +32,33 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000); // Adjust the delay to match the transition duration in milliseconds
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+  let headings = document.querySelectorAll('.blackout h3');
+  let paragraphs = document.querySelectorAll('.blackout p');
+  
+  headings.forEach(function(heading) {
+    heading.addEventListener('click', function() {
+      this.classList.toggle('clicked');
+    });
+  });
 
-// Wait for the document to fully load
-document.addEventListener("DOMContentLoaded", function() {
-  // Get the word element
-  let word = document.querySelector(".flash");
-
-  // Toggle the "visible" class every 2 seconds
-  setInterval(function() {
-      word.classList.toggle("visible");
-  }, 1000);
+  paragraphs.forEach(function(paragraph) {
+    paragraph.addEventListener('click', function() {
+      this.classList.toggle('clicked');
+    });
+  });
 });
+
+
+// // Wait for the document to fully load
+// document.addEventListener("DOMContentLoaded", function() {
+//   // Get the word element
+//   let word = document.querySelector(".flash");
+
+//   // Toggle the "visible" class every 2 seconds
+//   setInterval(function() {
+//       word.classList.toggle("visible");
+//   }, 1000);
+// });
+
 
