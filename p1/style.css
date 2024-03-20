@@ -194,9 +194,6 @@ body{
   h1{
     font-size: 5rem;
   }
-  .container{
-    margin-top:10%;
-  }
 }
 
 @media screen and (min-width: 350px) and (max-width: 675px) {
@@ -222,9 +219,12 @@ body{
     #hiddenDiv li {
         font-size:small;
         width:125px;
+        
   }
-    #hiddenDiv ul{
+  #hiddenDiv ul{
     text-align:left;
+    margin-top:35px;
+    margin-left:15px;
   }
 
 }
@@ -265,19 +265,22 @@ body{
         width: 25%;
         height: 35%;
   }
+  #hiddenDiv ul{
+    margin-left:-20%;
+  }
     #hiddenDiv h1{
         font-size:2.5rem;
         margin-left: 7px;
     }
 }
 @media screen and (min-width: 1150px){
-     .title h1{
-            top:14vh;
-    }
+     .title{
+        margin-top:-20px;
+     }
     #hiddenDiv{
         width: 18%;
     }
     #hiddenDiv h1{
         font-size:2.5rem;
     }
-  }
+ }
