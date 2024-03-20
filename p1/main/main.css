@@ -212,7 +212,7 @@ a:not(:first-child):not(:last-child) {
         width: calc(100vw - 40%);
         /* margin:5%; */
         justify-content: center;
-        margin-left: 40px;
+        margin-left: 15%;
         margin-top: 40px;
     }
     p{
@@ -228,7 +228,7 @@ a:not(:first-child):not(:last-child) {
     #missing img,
     #cy img, 
     #emily img{
-        margin-left: 0;
+        margin-left: 10%;
         width: calc(100vw - 35%);
         min-width: 200px;
         height:auto;
