@@ -152,18 +152,18 @@ body{
 }
 @media screen and (max-width: 350px) {
     .title h1{
-        top: -12vh;
+        top: -15vh;
     }
     .container{
         margin-top: 30%;
     }
     #buttonImage{
-        left: 33%;
+        left: 30%;
         bottom: 40%;
         width: 6vw;
     }
     #hiddenDiv{
-        margin-left: 28%;
+        margin-left: 18%;
         top: 52%;
         width: 150px;
         height: fit-content;
@@ -180,6 +180,7 @@ body{
         font-size:12px;
         width:fit-content;
   }
+
     #hiddenDiv ul{
     text-align:left;
     margin-top:35px;
