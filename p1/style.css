@@ -109,7 +109,7 @@ body{
     list-style-type: none;
     padding: 0;
     margin-top:10vh;
-    margin-left: 15vh;
+    /* margin-left: 15vh; */
     font-family:Courier, monospace;
   }
 #hiddenDiv H1 {
@@ -118,7 +118,8 @@ body{
     padding:10px;
     top:-2vh;
     margin-left: 20px;
-    font-family:Courier, monospace
+    font-family:Courier, monospace;
+    height: fit-content;
 }
 #hiddenDiv li {
     padding: 10px;
@@ -126,6 +127,7 @@ body{
     color:white;
     display:block;
     font-family: Courier, monospace;
+    margin-left: 25px;
   }
 #hiddenDiv li a {
     text-decoration:none;
@@ -150,12 +152,14 @@ body{
 #buttonImage:hover {
     transform: rotate(90deg); /* Rotating the element by 90 degrees on hover */
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 360px) {
     .title h1{
-        top: -15vh;
+        top: -13vh;
     }
     .container{
         margin-top: 30%;
+        width: 110%;
+        margin-left: -5%;
     }
     #buttonImage{
         left: 30%;
@@ -163,7 +167,7 @@ body{
         width: 6vw;
     }
     #hiddenDiv{
-        margin-left: 18%;
+        margin-left: 25%;
         top: 52%;
         width: 150px;
         height: fit-content;
@@ -197,7 +201,7 @@ body{
   }
 }
 
-@media screen and (min-width: 350px) and (max-width: 675px) {
+@media screen and (min-width: 360px) and (max-width: 675px) {
     .container{
         margin-top: 10%;
     }
@@ -211,28 +215,30 @@ body{
         width: 40px;
     }
     #hiddenDiv{
-        margin-left: 30%;
+        margin-left: 35%;
         top: 62%;
-        width: 45%;
+        width: 30%;
         height: 200px;
         box-shadow: 2px 4px 0px 0px rgba(0, 0, 0, 0.5);
     }
     #hiddenDiv li {
         font-size:small;
-        width:125px;
+        width:fit-content;
+
         
   }
   #hiddenDiv ul{
     text-align:left;
-    margin-top:35px;
+    margin-top:55px;
     margin-left:15px;
+    width: fit-content;
   }
 
 }
   
 @media screen and (min-width: 675px) and (max-width: 900px) {
     .container{
-        margin-top: 1%;
+        margin-top: 15%;
     }
     .title h1{
         top: -.15vh;
@@ -240,16 +246,20 @@ body{
     }
     #hiddenDiv{
         width: 90%;
-        height:110px;
+        height:100px;
         margin-top:-11%;
         margin-left: 40px;
         margin-right: 40px;
     }
     #hiddenDiv li {
         display:inline-block;
-        margin-top: -10px;
+        margin-top: 5px;
         margin-left:10px;
   }
+    #hiddenDiv ul{
+        margin-left: 175px;
+        margin-top: 2.5%;
+    }
     #hiddenDiv h1{
         font-size:2.5rem;
     }
@@ -263,11 +273,11 @@ body{
         top: 7vh;
     }
     #hiddenDiv{
-        width: 25%;
+        width: 20%;
         height: 35%;
   }
   #hiddenDiv ul{
-    margin-left:-20%;
+    margin-left:10%;
   }
     #hiddenDiv h1{
         font-size:2.5rem;
@@ -284,4 +294,5 @@ body{
     #hiddenDiv h1{
         font-size:2.5rem;
     }
+    
  }
