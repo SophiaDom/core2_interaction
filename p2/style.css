@@ -24,6 +24,22 @@ nav {
     justify-content: flex-end;
     height: fit-content;
 }
+a{
+    text-decoration: none;
+    color:#B8D1D9;
+}
+a:hover, a::after{
+    color:#286477;
+}
+p{
+    font-family: "Unica One", sans-serif;
+    font-variation-settings: "YEAR" 2030;
+    color:white;
+    padding: 10px;
+    margin: 40px;
+    line-height: 1.25em;
+    letter-spacing: .05em;
+}
 h1 {
     font-family: "Climate Crisis", sans-serif;
     font-variation-settings: "YEAR" 2030;
@@ -33,10 +49,6 @@ h1 {
     font-size: 15vw;
     margin: 0;
 }
-.PHACES {
-    border: 1px solid red;
-    position:relative; /* Just for demonstration */
-}
 h2 {
     font-family: "Climate Crisis", sans-serif;
     font-variation-settings: "YEAR" 2030;
@@ -45,7 +57,7 @@ h2 {
     max-width: 100%;
     font-size: 5vw;
     margin: 40px;
-    margin-bottom: 0px;
+    margin-bottom: 5%;
     position:sticky;
     top:10px;
     z-index: 60;
@@ -58,7 +70,8 @@ h3 {
     font-size: 1.5vw;
     margin: 0, 0, 0, 0;
     display: inline-block;
-    padding-right: 40px;
+    padding-right: 50px;
+    padding-top: 20px;
     transition: color 0.4s;
     left:-40%;
     height:5vh;
@@ -72,7 +85,7 @@ h3:hover {
 }
 .title h1 {
     position: absolute;
-    top: 80vh;
+    top: 70vh;
     left: 50vw;
     transform: translate(-50%, -50%);
     margin: 0;
@@ -128,6 +141,9 @@ span li{
     font-family: "Unica One", sans-serif;
     color:#B8D1D9;
     line-height: 1.5rem;
+    font-size: 3vw;
+    height: fit-content;
+    padding:5px;
 }
 span li:hover{
     color:#286477;
@@ -137,10 +153,12 @@ span ul{
     padding:10px;
     margin: 10px;
     margin-top: 0;
+    margin-bottom: 10px;
 }
 .slidecontainer {
     width: 100%;
     display: flex;
+    margin-top: 5%;
   }
   
   .slider {
@@ -179,7 +197,7 @@ span ul{
   }
 .rainbow{
     height: 20vh;
-    width: 100vh;
+    width: 80%;
     display:flex;
     justify-content:space-around;
     margin-left: auto;
@@ -199,7 +217,7 @@ span ul{
     text-align: center;
     color:#B8D1D9;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1100px) {
     .grid {
         grid-template-columns: repeat(6, 1fr);
     }
@@ -207,11 +225,11 @@ span ul{
 
 @media screen and (max-width: 600px) {
     .grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 #lastword {
-    margin-top:100vh;
+    margin-top:40vh;
 }
 footer{
     bottom: 0;
@@ -227,6 +245,7 @@ footer ul {
     margin: 0 auto;
     width: 90%;
     list-style-type: none;
+    height:fit-content;
 }
 
 footer li {
@@ -237,4 +256,24 @@ footer li {
     padding: 0; 
     flex: 1; 
     text-align:center;
+}
+
+@media screen and (max-width: 600px) {
+    .grid{
+        gap: 15px;
+    }
+    span li{
+        padding:0px;
+    }
+}
+
+
+@media screen and (min-width: 600px) and (max-width: 992px) {
+   
+}
+
+@media screen and (min-width: 993px) {
+   span li{
+    padding:10px;
+   }
 }
