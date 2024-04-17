@@ -17,49 +17,50 @@
 
 <body>
     <nav>
-        <h3>ABOUT</h3>
-        <h3>CREATE</h3>
+        <h3><a href="about/about.html">ABOUT</a></h3>
+        <h3><a href="create/create.html">CREATE</a></h3>
     </nav>
     <div class="title">
         <h1>PHACES</h1>
     </div>
-    <!-- <div class="PHACES"> -->
+    <div class="PHACES">
     <h2>PHACES</h2>
+    </div>
     <div class="categories">
         <span>
-            <ul>
-                <li>Current Friends</li>
-                <li>Teenage Friends</li>
-                <li>Childhood Friends</li>
+            <ul id="checkboxList1" class="checkboxList">
+                <li><label for="currentFriend"><input type="checkbox" id="currentFriend"><span class="checkbox-text">Current Friends</span></label></li>
+                <li><label for="teenageFriend"><input type="checkbox" id="teenageFriend"><span class="checkbox-text">Teenage Friends</span></label></li>
+                <li><label for="childhoodFriend"><input type="checkbox" id="childhoodFriend"><span class="checkbox-text">Childhood Friends</span></label></li>
             </ul>
         </span>
         <span>
-            <ul>
-                <li>Family</li>
-                <li>Pets</li>
-                <li>Passed</li>
+            <ul id="checkboxList2" class="checkboxList">
+                <li><label for="family"><input type="checkbox" id="family"><span class="checkbox-text">Family</span></label></li>
+                <li><label for="pets"><input type="checkbox" id="pets"><span class="checkbox-text">Pets</span></label></li>
+                <li><label for="passed"><input type="checkbox" id="passed"><span class="checkbox-text">Passed</span></label></li>
             </ul>
         </span>
         <span>
-            <ul>
-                <li>Connecticut</li>
-                <li>Germany</li>
-                <li>New York City</li>
-                <li>Philly</li>
+            <ul id="checkboxList3" class="checkboxList">
+                <li><label for="connecticut"><input type="checkbox" id="connecticut"><span class="checkbox-text">Connecticut</span></label></li>
+                <li><label for="germany"><input type="checkbox" id="germany"><span class="checkbox-text">Germany</span></label></li>
+                <li><label for="nyc"><input type="checkbox" id="nyc"><span class="checkbox-text">New York City</span></label></li>
+                <li><label for="philly"><input type="checkbox" id="philly"><span class="checkbox-text">Philly</span></label></li>
             </ul>
         </span>
         <span>
-            <ul>
-                <li>Boys</li>
-                <li>Done Dirty</li>
-                <li>Artists</li>
+            <ul id="checkboxList4" class="checkboxList">
+                <li><label for="pastPresentBoys"><input type="checkbox" id="pastPresentBoys"><span class="checkbox-text">Boys</span></label></li>
+                <li><label for="didMeDirty"><input type="checkbox" id="didMeDirty"><span class="checkbox-text">Done Dirty</span></label></li>
+                <li><label for="artist"><input type="checkbox" id="artist"><span class="checkbox-text">Artists</span></label></li>
             </ul>
         </span>
     </div>
     <div class="slidecontainer">
         <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
       </div>
-    <div class="rainbow">
+<div class="rainbow">
         <span>
             <ul>
                 <li>R</li>
@@ -91,8 +92,8 @@
             </ul>
         </span>
     </div>
-    <div class="grid">
-        <div class="grid-item">1</div>
+    <div class="grid" id="toolbox">
+        <!-- <div id="grid-item">1</div>
         <div class="grid-item">2</div>
         <div class="grid-item">3</div>
         <div class="grid-item">4</div>
@@ -248,7 +249,7 @@
         <div class="grid-item">142</div>
         <div class="grid-item">143</div>
         <div class="grid-item">144</div>
-    </div>
+    </div> -->
 </div>
     <footer>
         <h1 id="lastword">PHACES</h1>
@@ -260,7 +261,7 @@
           </ul>
         </span>
     </footer>
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 </body>
 
 </html>
