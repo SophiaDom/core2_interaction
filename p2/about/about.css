@@ -6,10 +6,7 @@ body {
     background-color:#B8D1D9;
     overflow:hidden;
   }
-/*   
-  [aminate] .word {
-    opacity: 0.1;
-  } */
+
 h1{
     font-family: "climate crisis", sans-serif;
     font-variation-settings: "YEAR" 2030;
@@ -30,13 +27,29 @@ h1{
 #about2{
     margin-left:100vw;
 }
-#hidden7{
-    margin-top: 50vh;
+#create,
+#create2 {
+    opacity: 50%;
+    font-size: 19vw;
+    position: fixed;
+    top:50%;
+    transform: translate(-50%, -50%) rotate(90deg);
 }
-#hidden7 h1 {
-    text-align: center;
+#create2{
+    margin-left:100vw;
 }
 
+.otherfont {
+  font-family: "Climate Crisis", sans-serif;
+  font-variation-settings: "YEAR" 2030;
+  color: #286477;
+}
+#hidden7{
+    height: 100vh;
+}
+#hidden7 h1 a {
+    text-align: center;
+}
 #hidden7 a {
     display: block;
     margin: 0 auto;
@@ -45,6 +58,7 @@ h1{
 a{
     text-decoration: none;
     color:#286477; 
+    margin-bottom: 40vh;
 }
 a:hover{
     color:white;
@@ -72,39 +86,141 @@ img{
 img:hover{
     filter:brightness(500%)
 }
-/* .button-wrap {
-    padding:1em;
-    text-align:center;
+.field{
+  margin-top: 75vh;
+}
+.color-field {
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin: 15px;
+  margin-top: 30px;
+  margin-bottom: -10px;
+  align-self: center;
+  border: 2px solid white;
+}
+.color-field-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.tools {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px;
+}
+.button.button{
+  width: 100px;
+  height: 40px;
+  border: 2px solid #B8D1D9;
+  cursor: pointer;
+  background-color:#B8D1D9;
+  font-family: "climate crisis", sans-serif;
+  font-variation-settings: "YEAR" 2030;
+  color:#286477;
+  opacity: 50%;
+  font-size: 15px;
+  margin-bottom: 0px;
+  margin-left: -50vw;
+}
+.back-button {
+  position: absolute;
+  top: 12vh;
+  right: 75vw;
+  z-index:1;
+}
+.clear-button {
+  position: absolute;
+  bottom: 15vh;
+  right: 75vw;
+  z-index: 1;
+}
+.button.button:hover{
+  background-color: white;
+  opacity: 70%;
+  border-radius: 15%;
+  color:#286477;
+}
+.pen-range{
+  align-self: center;
+  margin: 15px;
+}
+canvas{
+  box-shadow: -3px 2px 9px 6px #286477;
+  cursor: pointer;
+  background-color: white;
+  position: fixed;
+  top: 20vh;
+  min-width: 100px;
+  
+  /* left: 50%;
+  transform: translateX(-50%); */
+}
+canvas#canvas{
+  min-width: 150px;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  width: 80vw;
+  height: 25px;
+  background: white;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition:.2s;
+  transition: opacity.2s;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type=range]:hover {
+  opacity: 1;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #286477;
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #286477;
+  cursor: pointer;
+}
+#directions {
+  position: absolute;
+  top: -40vh;
+  text-align: right;
+  font-size: 20px;
+}
+#directions span{
+  font-family: "Climate Crisis", sans-serif;
+  font-variation-settings: "YEAR" 2030;
+  color: #286477;
+}
+@media (max-width: 600px) {
+  .back-button{
+    right: 60vw;
   }
-  .button {
-    position:relative;
-    display:inline-block;
-    margin:1em;
-    padding:0;
-    border:0;
-    background:none;
-    color:#B8D1D9;
-    opacity: 20%;
-    font-size:1.2em;
-    font-family: "Unica one", sans-serif;
-    transition:color 0.7s;
-    cursor:pointer;
+  .clear-button{
+    right: 60vw;
   }
-  .button.button-click,
-  .button:focus,
-  .button:hover {
-    outline:none;
-    color:white;
-    opacity:100%
-  }
-  .button:after {
-    content:'';
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin:0;
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    opacity:0;
-  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  /* CSS rules for screens with a minimum width of 601px and a maximum width of 1200px */
+}
+
+@media (min-width: 1201px) {
+  /* CSS rules for screens with a minimum width of 1201px */
+}

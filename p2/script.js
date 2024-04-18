@@ -277,8 +277,8 @@ const faces =
             'category' : ['family', 'germany', 'passed'].toString()
         },{
             'img': 'faces/img50.png',
-            'color' : 'purple.',
-            'category' : ['pets','childhoodFriend', 'teenageFriend', 'passed'].toString()
+            'color' : 'orange.',
+            'category' : ['family','childhoodFriend', 'connecticut', 'passed'].toString()
         },{
             'img': 'faces/img51.png',
             'title' : 'face 51',
@@ -743,12 +743,12 @@ const faces =
             'img': 'faces/img143.png',
             'title' : 'face 143',
             'color' : 'green.',
-            'category' : ['artist'].toString()
+            'category' : ['artist', 'passed'].toString()
         },{
             'img': 'faces/img144.png',
             'title' : 'face 144',
             'color' : 'orange.',
-            'category' : ['artist'].toString()
+            'category' : ['artist', 'passed'].toString()
         }
     ];
     
@@ -779,27 +779,10 @@ const faces =
             const faceHTML = generateFaceHTML(face);
             toolbox.innerHTML += faceHTML;
         });
+
+        renderContent();
     });
 
-    function renderContent(categories = []) {
-        const toolbox = document.getElementById('toolbox');
-        toolbox.innerHTML = '';
-    
-        if (isInitialRender) {
-            for (const face of faces) {
-                const faceElement = createImageElement(face);
-                toolbox.appendChild(faceElement);
-            }
-            isInitialRender = false;
-        } else {
-            for (const face of faces) {
-                if (categories.length === 0 || categories.some(category => face.category.includes(category))) {
-                    const faceElement = createImageElement(face);
-                    toolbox.appendChild(faceElement);
-                }
-            }
-        }
-    }
     
 
     function createImageElement(face) {
@@ -815,38 +798,41 @@ const faces =
     }
 
     const checkboxes = document.querySelectorAll('.categories input[type="checkbox"]');
-        checkboxes.forEach(function(checkbox) {
-            checkbox.addEventListener('change', function() {
-                const selectedCategories = [];
-                checkboxes.forEach(function(selectedCheckbox) {
-                    if (selectedCheckbox.checked) {
-                        selectedCategories.push(selectedCheckbox.value);
-                    }
-                });
-                renderContent(selectedCategories);
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            const selectedCategories = [];
+            checkboxes.forEach(function(selectedCheckbox) {
+                if (selectedCheckbox.checked) {
+                    selectedCategories.push(selectedCheckbox.value);
+                }
             });
+            console.log('Selected categories:', selectedCategories);
+            renderContent(selectedCategories);
+        });
     });
-
+    
     let isInitialRender = true;
-
+    
     function renderContent(categories = []) {
         const toolbox = document.getElementById('toolbox');
         toolbox.innerHTML = '';
     
-        if (isInitialRender) {
+        if (categories.length === 0) {
             for (const face of faces) {
                 const faceElement = createImageElement(face);
                 toolbox.appendChild(faceElement);
             }
-            isInitialRender = false;
         } else {
-            for (const face of faces) {
-                if (categories.length === 0 || categories.some(category => face.category.includes(category))) {
-                    const faceElement = createImageElement(face);
-                    toolbox.appendChild(faceElement);
-                }
+            const matchingFaces = faces.filter(face => {
+                return categories.every(category => face.category.includes(category));
+            });
+    
+            for (const face of matchingFaces) {
+                const faceElement = createImageElement(face);
+                toolbox.appendChild(faceElement);
             }
         }
     }
     
+    console.log('Faces:', faces);
     renderContent();

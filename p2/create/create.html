@@ -10,10 +10,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
     </style>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../about/about.css">
 </head>
 <body id="body">
-    <h1>CREATE</h1>
+    <h1 id="create">CREATE</h1>
+    <h1 id="create2">CREATE</h1>
+    <p id="directions">Select a color and brush size to create your own <span>PHACE</span></p>
+    <div class="field">
+        <canvas id="canvas"></canvas>
+        <div class="tools">
+            <button type="button" class="button back-button">Back</button>
+            <div class="color-field-container">    
+                <div onclick="change_color(this)" class="color-field" style="background-color:#B8D1D9;"></div>
+                <div onclick="change_color(this)" class="color-field" style="background-color:#286477;"></div>
+            </div>
+            <button onclick="clear_canvas()" type="button" class="button clear-button" >Clear</button>
+            <input oninput="draw_width = this.value" type="range" min="1" max="100" class="pen-range">
+        </div>
+    </div>
     <script defer src="create.js"></script>
 </body>
 </html>
