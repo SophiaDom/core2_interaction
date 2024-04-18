@@ -102,7 +102,7 @@ h3:hover {
     transform-origin: bottom 20vh;
 }
 .title.stretched h1{
-    transform:scaleY(3);
+    transform:scaleY(3) linear;
 }
 
 #create{

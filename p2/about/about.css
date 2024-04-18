@@ -114,7 +114,7 @@ img:hover{
   flex-direction: column;
   margin: 15px;
 }
-.button.button{
+button.button{
   width: auto;
   height: auto;
   cursor: pointer;
@@ -217,12 +217,31 @@ input[type=range]::-moz-range-thumb {
   .clear-button{
     right: 75vw;
   }
+  p#directions{
+    height: fit-content;
+    margin-top: 42vh;
+    margin-left: 20vw;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 1200px) {
-  /* CSS rules for screens with a minimum width of 601px and a maximum width of 1200px */
+  p#directions{
+    height: fit-content;
+    margin-top: 45vh;
+    margin-left: 20vw;
+    font-size: 25px;
+  }
 }
 
 @media (min-width: 1200px) {
-
+  p#directions{
+    height: fit-content;
+    margin-top: 45vh;
+    margin-left: 20vw;
+    font-size: 30px;
+  }
+  button.button.back-button,
+  button.button.clear-button{
+    margin-left: -100px;
+  }
 }
