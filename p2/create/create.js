@@ -30,16 +30,21 @@ canvas.addEventListener("mouseout", stop, false);
 
 function start(event) {
     is_drawing = true;
-    context.beginPath();
-    context.moveTo(event.clientX - canvas.offsetLeft,
-                   event.clientY - canvas.offsetTop);
     event.preventDefault();
+    context.beginPath();
+    if (event.type === "touchstart") {
+        context.moveTo(event.touches[0].pageX - canvas.offsetLeft,
+                       event.touches[0].pageY - canvas.offsetTop);
+    } else {
+        context.moveTo(event.pageX - canvas.offsetLeft,
+                       event.pageY - canvas.offsetTop);
+    }
 }
 
 function draw(event) {
     if(is_drawing) {
-        context.lineTo(event.clientX - canvas.offsetLeft,
-                       event.clientY - canvas.offsetTop);
+        context.lineTo(event.pageX - canvas.offsetLeft,
+                       event.pageY - canvas.offsetTop);
         context.strokeStyle = draw_color;
         context.lineWidth = draw_width;
         context.lineCap = "round";
@@ -47,7 +52,6 @@ function draw(event) {
         context.stroke();
     }
     event.preventDefault();
-
 }
 
 function stop(event) {
