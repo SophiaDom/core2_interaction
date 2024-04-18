@@ -115,11 +115,11 @@ img:hover{
   margin: 15px;
 }
 .button.button{
-  width: 100px;
-  height: 40px;
-  border: 2px solid #B8D1D9;
+  width: auto;
+  height: auto;
   cursor: pointer;
   background:none;
+  border: none;
   font-family: "climate crisis", sans-serif;
   font-variation-settings: "YEAR" 2030;
   color:#286477;
@@ -146,6 +146,11 @@ img:hover{
   opacity: 70%;
   border-radius: 15%;
   color:#286477;
+  border: 2px solid #B8D1D9;
+
+}
+.back-button a:hover{
+    color:#286477;
 }
 .pen-range{
   align-self: center;
@@ -207,10 +212,10 @@ input[type=range]::-moz-range-thumb {
 }
 @media (max-width: 600px) {
   .back-button{
-    right: 60vw;
+    right: 75vw;
   }
   .clear-button{
-    right: 60vw;
+    right: 75vw;
   }
 }
 
@@ -218,6 +223,6 @@ input[type=range]::-moz-range-thumb {
   /* CSS rules for screens with a minimum width of 601px and a maximum width of 1200px */
 }
 
-@media (min-width: 1201px) {
-  /* CSS rules for screens with a minimum width of 1201px */
+@media (min-width: 1200px) {
+
 }
