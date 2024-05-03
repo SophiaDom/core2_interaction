@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HATCHED</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap');
+    </style>
+</head>
+<body>
+    <div class="loadingScreen">
+        <div class="wrapper">
+            <svg>
+                <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                    HATCHED
+                </text>
+            </svg>
+        </div>
+    </div>
+    <div class="content">
+        <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
+            <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">put broken egg png here</button>
+            <a href="../index.html" class="w3-bar-item w3-button">CLASS WEBSITE </a>
+          </div>
+          <button class="w3-button w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+
+        <canvas id="canvasyear"></canvas>
+    </div>
+
+    <script defer src="hatched.js"></script>
+    <script defer src="sketch.js"></script>
+</body>
+</html>
