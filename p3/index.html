@@ -12,25 +12,45 @@
 </head>
 <body>
     <div class="loadingScreen">
-        <div class="wrapper">
-            <svg>
-                <text x="50%" y="50%" dy=".35em" text-anchor="middle">
-                    HATCHED
-                </text>
-            </svg>
-        </div>
+        <svg viewBox="0 0 960 300">
+            <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="80%">HATCHED </text>
+            <text text-anchor="middle" x="52%" y="80%">HATCHED </text>
+            
+            </symbol>
+        
+            <g class = "g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+            </g>
+        </svg>
     </div>
     <div class="content">
         <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
-            <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">put broken egg png here</button>
-            <a href="../index.html" class="w3-bar-item w3-button">CLASS WEBSITE </a>
+            <button id="brokenegg-btn" onclick="closeRightMenu()" class="w3-bar-item w3-button"><img id="brokenegg" src="visuals/brokenegg.png"></button>
+            <h2>HATCHED</h2>
+            <p>DOCUMENTING PERSONAL LIFESPAN THROUGH EXPRESSIVE CROSS HATCHING</p>
+            <h3 id="label">YEARS</h3>
+            <img id="years" class="key" src="visuals/years.png">
+            <h3 id="label">DAYS</h3>
+            <img id="days" class="key" src="visuals/days.png">
+            <h3 id="label">HOURS</h3>
+            <img id="hours" class="key" src="visuals/hours.png">
+            <h3 id="label">MINUTES</h3>
+            <img id="minutes" class="key" src="visuals/minutes.png">
+            <h3 id="label">SECONDS</h3>
+            <img id="seconds" class="key" src="visuals/seconds.png">
+            <a href="../index.html" class="w3-bar-item w3-button">CLASS<br>SITE </a>
+            <img id="soph" src="visuals/Untitled-2.png">
           </div>
-          <button class="w3-button w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+          <button id="menu-btn" class="w3-button w3-right" onclick="openRightMenu()"><img id ="crackedegg" src="visuals/crackedegg.png"></button>
 
-        <canvas id="canvasyear"></canvas>
+        <!-- <canvas id="canvasyear"></canvas> -->
     </div>
 
-    <script defer src="hatched.js"></script>
     <script defer src="sketch.js"></script>
 </body>
 </html>
