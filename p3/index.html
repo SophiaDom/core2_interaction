@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HATCHED</title>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.js"></script>
+    <script defer src="sketch.js"></script>
     <link href="style.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap');
@@ -29,10 +30,15 @@
         </svg>
     </div>
     <div class="content">
+        <canvas id="years-canvas" width="100%" height="100%"></canvas>
+        <canvas id="days-canvas" width="100%" height="100%"></canvas>
+        <canvas id="hours-canvas" width="100%" height="100%"></canvas>
+        <canvas id="minutes-canvas" width="100%" height="100%"></canvas>
+        <canvas id="seconds-canvas" width="100%" height="100%"></canvas>
         <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
             <button id="brokenegg-btn" onclick="closeRightMenu()" class="w3-bar-item w3-button"><img id="brokenegg" src="visuals/brokenegg.png"></button>
             <h2>HATCHED</h2>
-            <p>DOCUMENTING PERSONAL LIFESPAN THROUGH EXPRESSIVE CROSS HATCHING</p>
+            <p>DOCUMENTING TIME PASSING WITHIN A PERSONAL LIFESPAN THROUGH EXPRESSIVE CROSS HATCHING.</p>
             <h3 id="label">YEARS</h3>
             <img id="years" class="key" src="visuals/years.png">
             <h3 id="label">DAYS</h3>
@@ -47,10 +53,7 @@
             <img id="soph" src="visuals/Untitled-2.png">
           </div>
           <button id="menu-btn" class="w3-button w3-right" onclick="openRightMenu()"><img id ="crackedegg" src="visuals/crackedegg.png"></button>
-
-        <!-- <canvas id="canvasyear"></canvas> -->
     </div>
-
-    <script defer src="sketch.js"></script>
+    <!-- <script defer src="hatched.js"></script> -->
 </body>
 </html>

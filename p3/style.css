@@ -16,25 +16,16 @@
     justify-content: center;
     align-items: center;
     z-index: 100;
-    animation: slideUp 1.5s ease-in;
-    animation-delay: 4s;
-}
+    transition: transform 1.5s ease-out;
+  }
 
-@keyframes slideUp {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  .loadingScreen.slideLeft {
+    transform: translateX(-100%);
+  }
 
-    100% {
-        transform: translateY(-100%);
-        opacity: .5;
-    }
-}
-
-.hidden {
+  .loadingScreen.hidden {
     display: none;
-}
+  }
 
 h1 {
     font-size: 23vw;
@@ -81,27 +72,27 @@ svg {
 }
 
 .text-copy:nth-child(1){
-	stroke: #4D163D;
+	stroke: rgba(187,183,48,1);
 	animation-delay: -1;
 }
 
 .text-copy:nth-child(2){
-	stroke: #840037;
+	stroke: rgba(138,11,92,1);
 	animation-delay: -2s;
 }
 
 .text-copy:nth-child(3){
-	stroke: #BD0034;
+	stroke: rgba(179,175,110,1);
 	animation-delay: -3s;
 }
 
 .text-copy:nth-child(4){
-	stroke: #BD0034;
+	stroke: rgba(142,124,86,1);
 	animation-delay: -4s;
 }
 
 .text-copy:nth-child(5){
-	stroke: #FDB731;
+	stroke: rgba(152,153,25,1);
 	animation-delay: -5s;
 }
 
@@ -165,8 +156,6 @@ button.w3-bar-item.w3-button{
   width: 100px;
  }
 
-
-
  #crackedegg:hover{
   scale: 1.2;
  }
@@ -183,6 +172,7 @@ button.w3-bar-item.w3-button{
 
 .content {
     background-color: rgba(187, 183, 48, 1);
+    /* background-color: black; */
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -305,6 +295,9 @@ button.w3-button.w3-right{
     margin-top: -7%;
     opacity: .25;
 }
-#defaultCanvas0{
-    opacity: .25;
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

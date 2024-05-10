@@ -1,29 +1,43 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const loadingScreen = document.querySelector(".loadingScreen");
-    
-    setTimeout(function() {
-        loadingScreen.style.animation = "slideUp 1.5s ease"; // Apply slideUp animation
-        
-        // After the animation completes (after 1 second), add a class to hide the loading screen
-        setTimeout(function() {
-            loadingScreen.classList.add("hidden");
-        });
-    }, 5500);
+  const loadingScreen = document.querySelector(".loadingScreen");
+
+  // Add event listeners for click and keydown events
+  document.addEventListener("click", handleInteraction);
+  document.addEventListener("keydown", handleInteraction);
+
+  function handleInteraction(event) {
+    // Add the slideLeft class to trigger the animation
+    loadingScreen.classList.add("slideLeft");
+
+    // Remove the event listeners to prevent multiple animations
+    document.removeEventListener("click", handleInteraction);
+    document.removeEventListener("keydown", handleInteraction);
+  }
 });
+
+
 function openRightMenu() {
-    document.getElementById("rightMenu").style.display = "block";
-  }
-  
-  function closeRightMenu() {
-    document.getElementById("rightMenu").style.display = "none";
-  }
-  
-// const canvasyear = document.getElementById('canvasyear');
-// const ctx = canvasyear.getContext('2d');
-// const vw = window.innerWidth;
-// const vh = window.innerHeight;
-// canvasyear.width = vw;
-// canvasyear.height = vh;
-// ctx.fillStyle = 'transparent';
-// ctx.fillRect(0, 0, canvasyear.width, canvasyear.height);
+  document.getElementById("rightMenu").style.display = "block";
+}
+
+function closeRightMenu() {
+  document.getElementById("rightMenu").style.display = "none";
+}
+
+const menuBtn = document.getElementById('menu-btn');
+const crackedEgg = document.getElementById('crackedegg');
+
+menuBtn.addEventListener('click', () => {
+  crackedEgg.style.display = (crackedEgg.style.display === 'none') ? 'block' : 'none';
+});
+
+const brokenEggBtn = document.getElementById('brokenegg-btn');
+
+brokenEggBtn.addEventListener('click', () => {
+  crackedEgg.style.display = 'block';
+});
+
+
+
+
 
