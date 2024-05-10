@@ -77,7 +77,7 @@ svg {
 }
 
 .text-copy:nth-child(2){
-	stroke: rgba(138,11,92,1);
+	stroke: white;
 	animation-delay: -2s;
 }
 
@@ -171,7 +171,7 @@ button.w3-bar-item.w3-button{
  }
 
 .content {
-    background-color: rgba(187, 183, 48, 1);
+    background-color: white;
     /* background-color: black; */
     width: 100vw;
     height: 100vh;
@@ -184,6 +184,11 @@ button.w3-bar-item.w3-button{
     display: flex;
     margin-top: 0;
     justify-content: right;
+    transition: background-color 0.5s; /* Add transition for smooth color change */
+}
+
+.night {
+    background-color: black !important; /* Change background color to black */
 }
 
 a {
@@ -254,11 +259,11 @@ button{
 #days,
 #minutes,
 #seconds{
-    margin-top: -26%;
+    margin-top: 0%;
 }
 
 #hours{
-    margin-top: -43%;
+    margin-top: -15%;
 }
 
 a.w3-bar-item.w3-button{
@@ -292,7 +297,7 @@ button.w3-button.w3-right{
 #soph{
     width: 120px;
     margin-left: -3%;
-    margin-top: -7%;
+    margin-top: 50%;
     opacity: .25;
 }
 

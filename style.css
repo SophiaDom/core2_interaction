@@ -1,7 +1,7 @@
 body{
     overflow-y: hidden;
     overflow-x: hidden;
-    background-image:url('background.jpg');
+    background-image:url('backgrounds/background.jpg');
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -73,7 +73,6 @@ ul{
 }
 .container.one-hover {
     background-image: url('image-one.jpg');
-    background-image: url('image-one.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width:100vw;
@@ -84,7 +83,6 @@ ul{
 
 .container.two-hover {
     background-image: url('image-two.jpg');
-    background-image: url('image-one.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width:100vw;
@@ -94,8 +92,7 @@ ul{
 }
 
 .container.three-hover {
-    background-image: url('image-three.jpg');
-    background-image: url('image-one.jpg');
+    background-image: url('backgrounds/image-three.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width:100vw;

@@ -40,71 +40,72 @@ brokenEggBtn.addEventListener('click', () => {
 
 
 
-
+const MILLISECONDS_IN_SECOND = 1000;
+const MINUTES_IN_HOUR = 60;
+const SPACING = 5;
+const MARGIN = 20;
+const ROTATION_ANGLE = Math.PI / 2;
 
 // Get references to each canvas
-const yearsCanvas = document.getElementById('years-canvas');
-const daysCanvas = document.getElementById('days-canvas');
-const hoursCanvas = document.getElementById('hours-canvas');
-const minutesCanvas = document.getElementById('minutes-canvas');
-const secondsCanvas = document.getElementById('seconds-canvas');
+const canvases = [
+  { id: 'years-canvas', zIndex: 0 },
+  { id: 'days-canvas', zIndex: 1 },
+  { id: 'hours-canvas', zIndex: 2 },
+  { id: 'minutes-canvas', zIndex: 3 },
+  { id: 'seconds-canvas', zIndex: 4 },
+];
 
-// Create separate sketches for each function
-let yearsSketch;
-let daysSketch;
-let hoursSketch;
-let minutesSketch;
-let secondsSketch;
+const sketches = [];
 
-let completedHours;
-
-let msPassed = 0;
-const MILLISECONDS_IN_HOUR = 3600000; // 60 minutes * 60 seconds * 1000 milliseconds
-const MINUTES_IN_HOUR = 60;
-const MILLISECONDS_IN_MINUTE = 60000; // 60 seconds * 1000 milliseconds
-const MILLISECONDS_IN_SECOND = 1000;
-
-// Define MARGIN if it's supposed to be a constant
-const MARGIN = 10;
-const RECT_HEIGHT_SCALE = 2;
-const ROTATION_ANGLE = 45;
+function setupSketch(canvas, setupFunc, drawFunc) {
+  const sketch = new p5((p) => {
+    p.canvas = canvas;
+    p.setup = setupFunc;
+    p.draw = drawFunc;
+  }, canvas);
+  sketches.push(sketch);
+}
 
 function setup() {
-  // Create a new p5 instance for each canvas
-  yearsCanvas.style.zIndex = 0;
-  yearsSketch = new p5((p) => {
-    p.canvas = yearsCanvas;
-    p.setup = yearsSetup;
-    p.draw = yearsDraw;
-  }, yearsCanvas);
+  canvases.forEach((canvas) => {
+    const canvasElement = document.getElementById(canvas.id);
+    canvasElement.style.zIndex = canvas.zIndex;
+    setupSketch(canvasElement, getSetupFunc(canvas.id), getDrawFunc(canvas.id));
+  });
+}
 
-  daysCanvas.style.zIndex = 1;
-  daysSketch = new p5((p) => {
-    p.canvas = daysCanvas;
-    p.setup = daysSetup;
-    p.draw = daysDraw;
-  }, daysCanvas);
+function getSetupFunc(canvasId) {
+  switch (canvasId) {
+    case 'years-canvas':
+      return yearsSetup;
+    case 'days-canvas':
+      return daysSetup;
+    case 'hours-canvas':
+      return hoursSetup;
+    case 'minutes-canvas':
+      return minutesSetup;
+    case 'seconds-canvas':
+      return secondsSetup;
+    default:
+      return () => {};
+  }
+}
 
-  hoursCanvas.style.zIndex = 2;
-  hoursSketch = new p5((p) => {
-    p.canvas = hoursCanvas;
-    p.setup = hoursSetup;
-    p.draw = hoursDraw;
-  }, hoursCanvas);
-
-  minutesCanvas.style.zIndex = 3;
-  minutesSketch = new p5((p) => {
-    p.canvas = minutesCanvas;
-    p.setup = minutesSetup;
-    p.draw = minutesDraw;
-  }, minutesCanvas);
-
-  secondsCanvas.style.zIndex = 0;
-  secondsSketch = new p5((p) => {
-    p.canvas = secondsCanvas;
-    p.setup = secondsSetup;
-    p.draw = secondsDraw;
-  }, secondsCanvas);
+function getDrawFunc(canvasId) {
+  switch (canvasId) {
+    case 'years-canvas':
+      return yearsDraw;
+    case 'days-canvas':
+      return daysDraw;
+    case 'hours-canvas':
+      return hoursDraw;
+    case 'minutes-canvas':
+      return minutesDraw;
+    case 'seconds-canvas':
+      return secondsDraw;
+    default:
+      return () => {};
+  }
 }
 
 // Define setup and draw functions for each sketch
@@ -183,26 +184,22 @@ function daysDraw() {
     }
     const x = marginX + colIndex * (squareSize + marginX);
     const y = marginY + rowIndex * (squareSize + marginY);
-    fill('rgba(138,11,92,1)');
+    fill(' rgba(152,153,25,.15)');
     noStroke();
     rect(x, y, squareSize, squareSize);
-}
+  }
 }
 
 function hoursSetup() {
   createCanvas(windowWidth, windowHeight);
-  
-  // Define birthday and death dates in a more readable format
-  const birthYear = 2003;
-  const birthMonth = 5; // May (note: months are 0-based in JavaScript)
-  const birthDay = 12;
-  const birthHour = 18;
-  const birthMinute = 1;
-  
+  birthYear = 2003;
+  birthMonth = 5; // May (note: months are 0-based in JavaScript)
+  birthDay = 12;
+  birthHour = 18;
+  birthMinute = 1;
   birthDate = new Date(birthYear, birthMonth, birthDay, birthHour, birthMinute, 0);
   deathDate = new Date(2091, birthMonth, birthDay, birthHour, birthMinute, 0);
 }
-
 
 function hoursDraw() {
   background(255, 255, 255, 0);
@@ -224,7 +221,7 @@ function hoursDraw() {
   const TOP_MARGIN = 20; // top margin
   const BOTTOM_MARGIN = 20; // bottom margin
   const BORDER_WIDTH = 5; // border width
-  const BORDER_COLOR = ('green'); 
+  const BORDER_COLOR = ('rgb(8,8,8, 0.5)'); 
   const RECT_PADDING = 5;
 
   const totalAvailableSpace = viewportHeight - TOP_MARGIN - BOTTOM_MARGIN;
@@ -232,123 +229,83 @@ function hoursDraw() {
   const totalSpacing = remainingHours - 1;
   const spacing = (totalAvailableSpace - totalRectSpace) / totalSpacing;
 
-  fill('green');
+  fill('rgb(8,8,8, 0.25)');
   rect(0, TOP_MARGIN, RECT_WIDTH, BORDER_WIDTH);
 
   for (let i = 0; i < remainingHours; i++) {
     const rectX = 0; // no margin to the left side
     const rectY = TOP_MARGIN + i * (MAX_RECT_HEIGHT + spacing + RECT_PADDING); // add padding to the y-coordinate
-    fill('green');
+    fill('rgba(8,8,8, 0.25)');
     rect(rectX, rectY, RECT_WIDTH, MAX_RECT_HEIGHT);
   }
 
-drawRectangles(completedHours);
   //bottom border
   rect(0, TOP_MARGIN + totalRectSpace + totalSpacing * spacing, RECT_WIDTH, BORDER_WIDTH);
 }
 
 function minutesSetup() {
-  createCanvas(windowWidth, windowHeight);
-  birthday = new Date("May 12, 2003 18:01:00");
-  push(); // Save the current transformation matrix
-  translate(windowWidth * 0.3, 0);
-  rotate(PI / 4); // Rotate the canvas by 45 degrees
-}
-
-
-  function minutesDraw() {
-    background(255, 255, 255, 0);
-  
-    const today = new Date();
-    const birthdayTime = birthday.getTime();
-    const currentTime = today.getTime();
-    const msPassed = currentTime - birthdayTime;
-  
-    const minutesPassed = msPassed / MILLISECONDS_IN_MINUTE;
-    const completedMinutes = Math.floor(minutesPassed % MINUTES_IN_HOUR);
-  
-    if (completedMinutes === 0) {
-      clear();
-    }
-  
-    drawRectangles(completedMinutes, MINUTES_IN_HOUR, 1, 3);
-  }
-
-
-function drawRectangles(completedMinutes) {
-  const totalMinutes = MINUTES_IN_HOUR;
-  const rectWidth = (width - 2 * MARGIN) / totalMinutes;
-  const rectHeight = 3 * height;
-
-  push(); // Save the current transformation matrix
-  rotate(PI / 4); // Rotate the canvas by 45 degrees
-
-  for (let i = 0; i < completedMinutes; i++) {
-    const x = i * rectWidth + MARGIN;
-    const y = 0;
-    const width = rectWidth - MARGIN;
-    const height = rectHeight;
-    console.log("Red rectangle:", { x, y, width, height });
-    noStroke();
-    fill('red');
-    rect(x, y, width, height);
-  }
-
-  pop();
-}
-
-function secondsSetup() {
-  createCanvas(windowWidth, windowHeight);
+  sketches[sketches.length - 2].createCanvas(windowWidth, windowHeight);
   birthday = new Date("May 12, 2003 18:01:00");
 }
 
-function secondsDraw() {
+function minutesDraw() {
   const today = new Date();
   const birthdayTime = birthday.getTime();
   const currentTime = today.getTime();
   const msPassed = currentTime - birthdayTime;
+  const minutesPassed = msPassed / MILLISECONDS_IN_MINUTE;
+  const completedMinutes = Math.floor(minutesPassed % MINUTES_IN_HOUR);
 
-  const secondsPassed = msPassed / MILLISECONDS_IN_SECOND;
-  const remainingSeconds = (minutesPassed / 60);
-
-  if (remainingSecondsSeconds === 0) {
-    clear();
-  }
-
-  drawRectangles(r4emainingSeconds, 60, 1, 1);
+  drawRectangles(completedMinutes, MINUTES_IN_HOUR, 1, 3, 'blue'); // Set fill color to blue
 }
 
-function drawRectangles(completedSeconds) {
-  const totalSeconds = 60; // Total seconds in a minute
-  const rectWidth = (width - 2 * MARGIN) / totalSeconds;
-  const gap = 5; // Adjust this value to increase or decrease the gap between rectangles
-  const totalWidthWithGap = rectWidth + gap; // Calculate the total width including the gap
-  const rectHeight = height * RECT_HEIGHT_SCALE;
+let secondsCanvas; // Define a variable for the seconds layer canvas
 
-  // Create a separate coordinate system for the rectangles
-  push();
-  translate(MARGIN, height - MARGIN); // Move the origin to the bottom left
-  rotate(-ROTATION_ANGLE); // Rotate the rectangles to point toward the upper left
+function secondsSetup() {
+  sketches[sketches.length - 1].createCanvas(windowWidth, windowHeight);
+  birthday = new Date("May 12, 2003 18:01:00");
+  
+  // Create a separate canvas for the seconds layer
+  secondsCanvas = createGraphics(windowWidth, windowHeight);
+}
 
-  for (let i = 0; i < completedSeconds; i++) {
-    const x = i * totalWidthWithGap; // Adjust x position to include the gap
+// function secondsDraw() {
+//   const today = new Date();
+//   const birthdayTime = birthday.getTime();
+//   const currentTime = today.getTime();
+//   const msPassed = currentTime - birthdayTime;
+//   const secondsPassed = msPassed / MILLISECONDS_IN_SECOND;
+//   const remainingSeconds = secondsPassed % 60;
+
+//   // Clear the seconds layer canvas
+//   secondsCanvas.clear();
+
+//   // Draw rectangles on the seconds layer canvas
+//   drawRectangles(secondsCanvas, remainingSeconds, 60, 1, 1, 'yellow');
+
+//   // Draw the seconds layer canvas on the main canvas
+//   image(secondsCanvas, 0, 0);
+// }
+
+// Shared function
+function drawRectangles(canvas, completedUnits, totalUnits, rectHeightScale, rectWidthScale, fillColor) {
+  const viewportWidth = canvas.width;
+  const viewportHeight = canvas.height;
+  const rectWidth = (viewportWidth - (totalUnits - 1) * SPACING) / totalUnits;
+  const rectHeight = rectHeightScale * viewportHeight;
+
+  canvas.push();
+  canvas.translate(MARGIN, height - MARGIN);
+  canvas.rotate(-ROTATION_ANGLE);
+  for (let i = 0; i < completedUnits; i++) {
+    const x = i * (rectWidth + SPACING);
     const y = 0;
-    const width = rectWidth;
-    const height = rectHeight;
-    console.log("Yellow rectangle:", { x, y, width, height });
-    noStroke();
-    fill('yellow');
-    rect(x, y, width, height);
+    canvas.fill(fillColor); // Use the provided fill color
+    canvas.noStroke();
+    canvas.rect(x, y, rectWidth, rectHeight * rectWidthScale);
   }
-
-  pop();
+  canvas.pop();
 }
-
-
-
-
-
-
 
 
 
