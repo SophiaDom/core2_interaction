@@ -4,7 +4,7 @@ body {
     height:100vh;
     margin: 0 auto;
     background-color:#B8D1D9;
-    overflow:hidden;
+    /* overflow:hidden; */
   }
 
 h1{
@@ -26,6 +26,7 @@ h1{
 }
 #about2{
     margin-left:100vw;
+    top:52%;
 }
 #create,
 #create2 {
@@ -38,14 +39,21 @@ h1{
 #create2{
     margin-left:100vw;
 }
-
+.content{
+  opacity:1;
+  transition: opacity 0.5s;
+}
+.content.scrollled {
+  opacity:1;
+}
 .otherfont {
   font-family: "Climate Crisis", sans-serif;
   font-variation-settings: "YEAR" 2030;
   color: #286477;
 }
 #hidden7{
-    height: 100vh;
+    height: fit-content;
+    margin-top: 80vh;
 }
 #hidden7 h1 a {
     text-align: center;
@@ -210,7 +218,8 @@ input[type=range]::-moz-range-thumb {
   font-variation-settings: "YEAR" 2030;
   color: #286477;
 }
-@media (max-width: 600px) {
+@media (max-width: 400px) {
+
   .back-button{
     right: 75vw;
   }
@@ -219,21 +228,41 @@ input[type=range]::-moz-range-thumb {
   }
   p#directions{
     height: fit-content;
-    margin-top: 42vh;
+    margin-top: 25vh;
     margin-left: 20vw;
+  }
+  .content{
+    margin-top:10vh;
+
+  }
+  .content p{
+    font-size: 1.5em;
   }
 }
 
-@media (min-width: 601px) and (max-width: 1200px) {
+@media (min-width: 400px) and (max-width: 850px) {
+  p#directions{
+    height: fit-content;
+    margin-top: 40vh;
+    margin-left: 20vw;
+    font-size: 25px;
+  }
+  .content{
+    margin-top:25vh;
+  }
+}
+@media (min-width: 850px) and (max-width: 1100px) {
   p#directions{
     height: fit-content;
     margin-top: 45vh;
     margin-left: 20vw;
     font-size: 25px;
   }
+  .content{
+    margin-top: 45vh;
+  }
 }
-
-@media (min-width: 1200px) {
+@media (min-width: 1100px) and (max-width: 2000px) {
   p#directions{
     height: fit-content;
     margin-top: 45vh;
@@ -243,5 +272,8 @@ input[type=range]::-moz-range-thumb {
   button.button.back-button,
   button.button.clear-button{
     margin-left: -100px;
+  }
+  .content{
+    margin-top: 70vh;
   }
 }
