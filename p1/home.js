@@ -49,16 +49,3 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
-// // Wait for the document to fully load
-// document.addEventListener("DOMContentLoaded", function() {
-//   // Get the word element
-//   let word = document.querySelector(".flash");
-
-//   // Toggle the "visible" class every 2 seconds
-//   setInterval(function() {
-//       word.classList.toggle("visible");
-//   }, 1000);
-// });
-
-

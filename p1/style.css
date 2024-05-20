@@ -13,7 +13,6 @@ h1{
     font-family: "Cabin Sketch", sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: ;
     height: 100vh;
     line-height: .8;
     justify-content: center;
@@ -162,13 +161,13 @@ body{
         margin-left: -5%;
     }
     #buttonImage{
-        left: 30%;
+        left: 35%;
         bottom: 40%;
         width: 6vw;
     }
 
     #hiddenDiv{
-        margin-left: 25%;
+        margin-left: 30%;
         top: 52%;
         width: 150px;
         height: fit-content;
@@ -225,9 +224,7 @@ body{
     #hiddenDiv li {
         font-size:small;
         width:fit-content;
-
-        
-  }
+    }
   #hiddenDiv ul{
     text-align:left;
     margin-top:55px;
