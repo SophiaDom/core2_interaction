@@ -244,14 +244,13 @@ img:hover{
     height:auto;
     width: auto;
 }
-#toolbox.grid{
+#toolbox.grid {
     margin: 50px;
     display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
-    grid-auto-columns: minmax(100px, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 5px;
-    width:auto;
-    height:auto;
+    width: auto;
+    height: auto;
     justify-content: center;
 }
 .face{

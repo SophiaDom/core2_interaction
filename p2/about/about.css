@@ -18,8 +18,8 @@ h1{
 }
 #about,
 #about2 {
-    opacity: 5%;
-    font-size: 19vw;
+    opacity: 25%;
+    font-size: 19vh;
     position: fixed;
     top:50%;
     transform: translate(-50%, -50%) rotate(90deg);
@@ -31,7 +31,7 @@ h1{
 #create,
 #create2 {
     opacity: 50%;
-    font-size: 19vw;
+    font-size: 19vh;
     position: fixed;
     top:50%;
     transform: translate(-50%, -50%) rotate(90deg);
@@ -42,6 +42,7 @@ h1{
 .content{
   opacity:1;
   transition: opacity 0.5s;
+  margin-left: 5vw;
 }
 .content.scrollled {
   opacity:1;
@@ -127,42 +128,45 @@ button.button{
   height: auto;
   cursor: pointer;
   background:none;
-  border: none;
+  border: 2px solid #286477;
   font-family: "climate crisis", sans-serif;
   font-variation-settings: "YEAR" 2030;
   color:#286477;
   opacity: 50%;
-  font-size: 15px;
+  font-size: 10px;
   margin-bottom: 0px;
   margin-left: -50vw;
-  padding: 10px;
+  padding: 5px;
+}
+.color-field-container{
+  position: fixed;
 }
 .back-button {
-  position: absolute;
-  top: 12vh;
-  right: 75vw;
+  position: fixed;
+  top: 90vh;
+  left: 125vw;
   z-index:1;
 }
 .clear-button {
-  position: absolute;
-  bottom: 15vh;
+  position: fixed;
+  top: 90vh;
   right: 75vw;
   z-index: 1;
 }
 .button.button:hover{
-  background-color: white;
-  opacity: 70%;
+  opacity: 100%;
   border-radius: 15%;
   color:#286477;
-  border: 2px solid #B8D1D9;
 
 }
 .back-button a:hover{
     color:#286477;
 }
-.pen-range{
+input.pen-range{
   align-self: center;
   margin: 15px;
+  position: fixed;
+  bottom: 10vh;
 }
 canvas{
   box-shadow: -3px 2px 9px 6px #286477;
@@ -177,7 +181,7 @@ canvas{
 input[type=range] {
   -webkit-appearance: none;
   width: 80vw;
-  height: 25px;
+  height: 15px;
   background: white;
   outline: none;
   opacity: 0.7;
@@ -208,10 +212,11 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 #directions {
-  position: absolute;
-  top: -40vh;
+  position: fixed;
+  top: -35vh;
   text-align: right;
   font-size: 20px;
+  left: -5vw;
 }
 #directions span{
   font-family: "Climate Crisis", sans-serif;
@@ -228,7 +233,7 @@ input[type=range]::-moz-range-thumb {
   }
   p#directions{
     height: fit-content;
-    margin-top: 25vh;
+    margin-top: 40vh;
     margin-left: 20vw;
   }
   .content{
@@ -254,7 +259,7 @@ input[type=range]::-moz-range-thumb {
 @media (min-width: 850px) and (max-width: 1100px) {
   p#directions{
     height: fit-content;
-    margin-top: 45vh;
+    margin-top: 40vh;
     margin-left: 20vw;
     font-size: 25px;
   }
@@ -265,15 +270,20 @@ input[type=range]::-moz-range-thumb {
 @media (min-width: 1100px) and (max-width: 2000px) {
   p#directions{
     height: fit-content;
-    margin-top: 45vh;
+    margin-top: 40vh;
     margin-left: 20vw;
     font-size: 30px;
   }
-  button.button.back-button,
   button.button.clear-button{
     margin-left: -100px;
   }
   .content{
     margin-top: 70vh;
+  }
+  .color-field-container{
+    top: 85vh;
+  }
+  input.pen-range{
+    top: 75vh;
   }
 }
