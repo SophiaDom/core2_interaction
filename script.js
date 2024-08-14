@@ -1,41 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const elements = document.querySelectorAll('.one,.two,.three');
+    const elements = document.querySelectorAll('.one, .two, .three');
 
     function randomizePositions() {
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
-
+    
         elements.forEach(function(element) {
-            // Set random position within the viewport, ensuring it doesn't go off the screen
-            const maxTop = viewportHeight - element.offsetHeight;
-            const maxLeft = viewportWidth - element.offsetWidth;
-
-            // Calculate a random position that keeps the element within the viewport
+            const elementRect = element.getBoundingClientRect();
+            const elementWidth = elementRect.width;
+            const elementHeight = elementRect.height;
+    
+            const maxTop = viewportHeight - elementHeight;
+            const maxLeft = viewportWidth - elementWidth;
+    
             const top = Math.random() * maxTop;
             const left = Math.random() * maxLeft;
-
-            // Add a small buffer to prevent elements from sticking to the edge
-            const buffer = 20;
-
-            element.style.top = `${Math.max(buffer, top)}px`;
-            element.style.left = `${Math.max(buffer, left)}px`;
+    
+            element.style.top = `${top}px`;
+            element.style.left = `${left}px`;
         });
     }
 
-    // Randomize positions initially
     randomizePositions();
 
-    // Randomize positions every 3 seconds (adjust as needed)
     setInterval(randomizePositions, 3000);
 
-    // Add hover effect
     elements.forEach(function(element) {
         element.addEventListener('mouseenter', function() {
-            element.classList.add('hovered');
+            const container = document.querySelector('.container');
+            container.classList.remove('one-hover', 'two-hover', 'three-hover'); // Reset all hover classes
+            if (element.classList.contains('one')) {
+                container.classList.add('one-hover');
+            } else if (element.classList.contains('two')) {
+                container.classList.add('two-hover');
+            } else if (element.classList.contains('three')) {
+                container.classList.add('three-hover');
+            }
         });
 
         element.addEventListener('mouseleave', function() {
-            element.classList.remove('hovered');
+            document.querySelector('.container').classList.remove('one-hover', 'two-hover', 'three-hover');
         });
     });
 });

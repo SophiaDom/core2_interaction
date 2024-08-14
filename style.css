@@ -72,7 +72,7 @@ ul{
     margin-left:20px;
 }
 .container.one-hover {
-    background-image: url('image-one.jpg');
+    background-image: url('backgrounds/image-one.jpg') !important;
     background-size: cover;
     background-repeat: no-repeat;
     width:100vw;
@@ -82,7 +82,7 @@ ul{
 }
 
 .container.two-hover {
-    background-image: url('image-two.jpg');
+    background-image: url('backgrounds/image-two.jpg') !important;
     background-size: cover;
     background-repeat: no-repeat;
     width:100vw;
@@ -92,7 +92,7 @@ ul{
 }
 
 .container.three-hover {
-    background-image: url('backgrounds/image-three.jpg');
+    background-image: url('backgrounds/image-three.jpg') !important;
     background-size: cover;
     background-repeat: no-repeat;
     width:100vw;
