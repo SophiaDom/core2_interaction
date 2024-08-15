@@ -79,42 +79,49 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        const clickCounts = {};
+document.querySelectorAll('.one, .two, .three').forEach((element) => {
+  clickCounts[element] = 0;
+  element.addEventListener('click', (e) => {
+    // Check if the screen width is less than or equal to 480px (mobile screen)
+    if (window.innerWidth <= 480) {
+      if (clickCounts[element] === 0) {
+        // Add the hover class on the first click
+        element.classList.add('hovered');
+        // Prevent the default link behavior on the first click
+        e.preventDefault();
+        clickCounts[element]++;
+      } else if (clickCounts[element] === 1) {
+        // Remove the hover class and trigger the link on the second click
+        element.classList.remove('hovered');
+        // Reset the click count to zero
+        clickCounts[element] = 0;
+        // Trigger the link
+        window.location.href = element.getAttribute('href');
+      }
+    } else {
+      // Trigger the link on non-mobile screens
+      window.location.href = element.getAttribute('href');
+    }
+  });
+});
+
+// Add event listener to the document to remove hover state when clicking outside
+document.addEventListener('click', (e) => {
+  if (window.innerWidth <= 480) {
+    // Check if the click target is not one of the elements
+    if (e.target && e.target.classList) {
+      if (!e.target.classList.contains('one') && !e.target.classList.contains('two') && !e.target.classList.contains('three')) {
+        // Remove the hover class from all elements
         document.querySelectorAll('.one, .two, .three').forEach((element) => {
-            let clickCount = 0;
-            element.addEventListener('click', (e) => {
-              // Check if the screen width is less than or equal to 768px (mobile screen)
-              if (window.innerWidth <= 480) {
-                clickCount++;
-                if (clickCount === 1) {
-                  // Add the hover class on the first click on mobile screens
-                  element.classList.add('hovered');
-                  // Prevent the default link behavior on the first click
-                  e.preventDefault();
-                } else {
-                  // Trigger the link on the second click, keeping the hover state
-                  window.location.href = element.getAttribute('href');
-                }
-              } else {
-                // Trigger the link on non-mobile screens
-                window.location.href = element.getAttribute('href');
-              }
-            });
-          });
-          
-          // Add event listener to the document to remove hover state when clicking outside
-          document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 480) {
-              // Check if the click target is not one of the elements
-              if (!e.target.classList.contains('one') && !e.target.classList.contains('two') && !e.target.classList.contains('three')) {
-                // Remove the hover class from all elements
-                document.querySelectorAll('.one, .two, .three').forEach((element) => {
-                  element.classList.remove('hovered');
-                  // Reset the click count
-                  element.clickCount = 0;
-                });
-              }
-            }
-          });
+          element.classList.remove('hovered');
+          // Reset the click count to zero
+          clickCounts[element] = 0;
+        });
+      }
+    }
+  }
+});
 
         element.addEventListener('mouseleave', function() {
             isHovering = false;
