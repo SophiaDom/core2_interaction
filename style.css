@@ -71,7 +71,7 @@ ul{
     right: 40px;
     margin-left:20px;
 }
-.container.one:hover {
+.container.one-hover {
     background-image: url('backgrounds/image-one.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -81,7 +81,7 @@ ul{
     left:0px;
 }
 
-.container.two:hover {
+.container.two-hover {
     background-image: url('backgrounds/image-two.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -91,7 +91,7 @@ ul{
     left:0px;
 }
 
-.container.three:hover {
+.container.three-hover {
     background-image: url('backgrounds/image-three.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -104,7 +104,24 @@ ul{
 .two:hover,
 .three:hover{
     color:white;
+    transform: scale(1.1);
 }
+
+.one-hover .one,
+.two-hover .two,
+.three-hover .three {
+    z-index: 1000;
+}
+
+.one-hover .two,
+.one-hover .three,
+.two-hover .one,
+.two-hover .three,
+.three-hover .one,
+.three-hover .two {
+    z-index: -1;
+}
+
 .descriptions{
     position:fixed;
     bottom: 2em;
@@ -124,3 +141,13 @@ li{
     letter-spacing: 2px;
     font-weight: 700;
 }
+
+.parent {
+    padding: 10px;
+  }
+
+@media only screen and (max-width: 480px) {
+    .container li {
+      font-size: 0.6em;
+    }
+  }
