@@ -89,9 +89,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }, interval); // resume the interval
         });
 
-        element.addEventListener('pointerdown', (e) => {
-            touchCount++;
-            if (touchCount === 1) {
+        element.addEventListener('touchstart', (e) => {
+            if (!touchStarted) {
+                touchStarted = true;
                 if (e.target.classList.contains('one')) {
                     container.classList.add('one-hover');
                 } else if (e.target.classList.contains('two')) {
@@ -102,20 +102,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        element.addEventListener('pointerup', (e) => {
-            if (touchCount === 2) {
-                touchCount = 0;
-                container.classList.remove('one-hover', 'two-hover', 'three-hover'); // clear hover state
-                if (e.target.tagName === 'A') { // check if the pointer event is on a link
-                    // allow the link to navigate to the next site
-                }
-            } else {
-                touchCount = 0;
+        element.addEventListener('touchend', (e) => {
+            touchStarted = false;
+            if (!e.target.classList.contains('one') && !e.target.classList.contains('two') && !e.target.classList.contains('three')) {
+                container.classList.remove('one-hover', 'two-hover', 'three-hover');
             }
         });
     });
 
     // Add event listener to the document to remove hover state when clicking outside
-    document.addEventListener('pointerup', (e) =>
+    document.addEventListener('touchstart', (e) => {
+        if (!e.target.classList.contains('one') && !e.target.classList.contains('two') && !e.target.classList.contains('three')) {
+            container.classList.remove('one-hover', 'two-hover', 'three-hover');
+            touchStarted = false;
+        }
     });
 });

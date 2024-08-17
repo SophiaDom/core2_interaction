@@ -278,6 +278,7 @@ footer ul {
     display: flex;
     padding: 0;
     margin: 0 auto;
+    /* margin-bottom: 10px; */
     width: 90%;
     list-style-type: none;
     height:fit-content;
@@ -287,7 +288,7 @@ footer li {
     font-family: "climate crisis", sans-serif;
     font-variation-settings: "YEAR" 2030;
     margin: 0; 
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     padding: 0; 
     flex: 1; 
     text-align:center;
