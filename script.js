@@ -2,41 +2,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.one, .two, .three');
     const container = document.querySelector('.container');
     let isHovering = false;
+    let touchCount = 0;
 
     function randomizePosition(element) {
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-        
-        const elementRect = element.getBoundingClientRect();
-        const elementWidth = elementRect.width;
-        const elementHeight = elementRect.height;
-        
-        // Calculate the maximum top and left positions that keep the element inside the viewport
-        const maxTop = viewportHeight - elementHeight;
-        const maxLeft = viewportWidth - elementWidth;
-        
-        let top, left;
-        let overlap = true;
-        
-        while (overlap) {
-            top = Math.random() * maxTop;
-            left = Math.random() * maxLeft;
-            
-            overlap = false;
-            
-            // Check if the new position overlaps with any of the existing numerals
-            const numerals = document.querySelectorAll('.one, .two, .three');
-            numerals.forEach((numeral) => {
-                const numeralRect = numeral.getBoundingClientRect();
-                if (numeral !== element && isOverlapping(elementRect, numeralRect, top, left)) {
-                    overlap = true;
-                }
-            });
-        }
-        
-        element.style.top = `${top}px`;
-        element.style.left = `${left}px`;
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const elementRect = element.getBoundingClientRect();
+    const elementWidth = elementRect.width;
+    const elementHeight = elementRect.height;
+
+    // Calculate the maximum top and left positions that keep the element inside the viewport
+    const maxTop = viewportHeight - elementHeight - 20; // add a 20px buffer
+    const maxLeft = viewportWidth - elementWidth - 20; // add a 20px buffer
+
+    let top, left;
+    let overlap = true;
+
+    while (overlap) {
+        top = Math.random() * maxTop;
+        left = Math.random() * maxLeft;
+
+        overlap = false;
+
+        // Check if the new position overlaps with any of the existing numerals
+        const numerals = document.querySelectorAll('.one, .two, .three');
+        numerals.forEach((numeral) => {
+            const numeralRect = numeral.getBoundingClientRect();
+            if (numeral !== element && isOverlapping(elementRect, numeralRect, top, left)) {
+                overlap = true;
+            }
+        });
     }
+
+    element.style.top = `${top}px`;
+    element.style.left = `${left}px`;
+}
     
     function isOverlapping(rect1, rect2, top, left) {
         const rect1Top = top;
@@ -79,50 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        const clickCounts = {};
-document.querySelectorAll('.one, .two, .three').forEach((element) => {
-  clickCounts[element] = 0;
-  element.addEventListener('click', (e) => {
-    // Check if the screen width is less than or equal to 480px (mobile screen)
-    if (window.innerWidth <= 480) {
-      if (clickCounts[element] === 0) {
-        // Add the hover class on the first click
-        element.classList.add('hovered');
-        // Prevent the default link behavior on the first click
-        e.preventDefault();
-        clickCounts[element]++;
-      } else if (clickCounts[element] === 1) {
-        // Remove the hover class and trigger the link on the second click
-        element.classList.remove('hovered');
-        // Reset the click count to zero
-        clickCounts[element] = 0;
-        // Trigger the link
-        window.location.href = element.getAttribute('href');
-      }
-    } else {
-      // Trigger the link on non-mobile screens
-      window.location.href = element.getAttribute('href');
-    }
-  });
-});
-
-// Add event listener to the document to remove hover state when clicking outside
-document.addEventListener('click', (e) => {
-  if (window.innerWidth <= 480) {
-    // Check if the click target is not one of the elements
-    if (e.target && e.target.classList) {
-      if (!e.target.classList.contains('one') && !e.target.classList.contains('two') && !e.target.classList.contains('three')) {
-        // Remove the hover class from all elements
-        document.querySelectorAll('.one, .two, .three').forEach((element) => {
-          element.classList.remove('hovered');
-          // Reset the click count to zero
-          clickCounts[element] = 0;
-        });
-      }
-    }
-  }
-});
-
         element.addEventListener('mouseleave', function() {
             isHovering = false;
             container.classList.remove('one-hover', 'two-hover', 'three-hover'); // instantly remove the background
@@ -132,5 +88,34 @@ document.addEventListener('click', (e) => {
                 }
             }, interval); // resume the interval
         });
+
+        element.addEventListener('pointerdown', (e) => {
+            touchCount++;
+            if (touchCount === 1) {
+                if (e.target.classList.contains('one')) {
+                    container.classList.add('one-hover');
+                } else if (e.target.classList.contains('two')) {
+                    container.classList.add('two-hover');
+                } else if (e.target.classList.contains('three')) {
+                    container.classList.add('three-hover');
+                }
+            }
+        });
+
+        element.addEventListener('pointerup', (e) => {
+            if (touchCount === 2) {
+                touchCount = 0;
+                container.classList.remove('one-hover', 'two-hover', 'three-hover'); // clear hover state
+                if (e.target.tagName === 'A') { // check if the pointer event is on a link
+                    // allow the link to navigate to the next site
+                }
+            } else {
+                touchCount = 0;
+            }
+        });
+    });
+
+    // Add event listener to the document to remove hover state when clicking outside
+    document.addEventListener('pointerup', (e) =>
     });
 });
