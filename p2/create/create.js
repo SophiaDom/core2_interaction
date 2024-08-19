@@ -1,9 +1,20 @@
 const canvas = document.getElementById("canvas");
-canvas.width = window.innerWidth - 200;
+let screenWidth = window.innerWidth;
+let canvasWidth;
+
+if (screenWidth < 450) {
+    canvasWidth = 300; // set the minimum width to 300px
+  } else if (screenWidth > 1000) {
+    canvasWidth = 900; // set the maximum width to 700px
+  } else {
+    canvasWidth = screenWidth - 200;
+  }
+
+canvas.width = canvasWidth;
 canvas.height = 400;
 
 // Calculate and set the horizontal center position
-const centerX = (window.innerWidth - canvas.width) / 2;
+const centerX = (screenWidth - canvasWidth) / 2;
 canvas.style.left = `${centerX}px`;
 
 let context = canvas.getContext("2d");
@@ -68,3 +79,35 @@ function clear_canvas() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.fillRect(0, 0, canvas.width, canvas.height);
 }
+
+
+
+
+const directionsElement = document.getElementById('directions');
+
+function calculateFontSize() {
+  const textContent = directionsElement.textContent;
+  const spanText = directionsElement.querySelector('span').textContent;
+  const textWithoutSpan = textContent.replace(spanText, '');
+  
+  // Calculate the width of the text and span using a large base font size
+  const textWidth = getTextWidth(textWithoutSpan, 'Unica One', 100);
+  const spanWidth = getTextWidth(spanText, 'Climate Crisis', 100); // Use the span's font
+  const totalWidth = textWidth + spanWidth;
+  
+  // Calculate the container width and set the font size proportionally
+  const containerWidth = window.innerWidth - 40; // Subtract 40px for extra padding (adjusted from 20px)
+  const fontSize = Math.min((containerWidth / totalWidth) * 90, 100); // Adjust the multiplier to 90% of the calculated size
+  directionsElement.style.fontSize = `${fontSize}px`;
+}
+
+function getTextWidth(text, font, fontSize) {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.font = `${fontSize}px ${font}`;
+  const metrics = ctx.measureText(text);
+  return metrics.width;
+}
+
+window.addEventListener('resize', calculateFontSize);
+calculateFontSize();

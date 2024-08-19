@@ -80,7 +80,7 @@ p{
     font-size: 3vw;
     height:100vh;
     align-content: center;
-    margin-top: -10px;
+    margin-top: 50vh;
     width: 70%;
 }
 img{
@@ -127,7 +127,7 @@ button.button{
   width: auto;
   height: auto;
   cursor: pointer;
-  background:none;
+  background:white;
   border: 2px solid #286477;
   font-family: "climate crisis", sans-serif;
   font-variation-settings: "YEAR" 2030;
@@ -212,18 +212,70 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 #directions {
-  position: fixed;
-  top: -35vh;
-  text-align: right;
-  font-size: 20px;
-  left: -5vw;
+  position: absolute;
+  top: -40vh; /* Keep this value if you want it to stay positioned this way */
+  left: 50%; /* Center horizontally relative to the viewport */
+  transform: translateX(-50%); /* Offset the element by half its width to center it */
+  max-width: calc(100vw - 20px); /* Ensure it doesn't exceed the viewport width minus some padding */
+  margin: 0; /* Remove any additional margins */
+  text-align: center; /* Center the text inside the element */
+  white-space: nowrap; /* Prevent line breaks */
+  font-family: 'Unica One'; /* Set the font family */
+  font-size: 1px; /* Initial font size, will be updated by JavaScript */
+  overflow: hidden; /* Prevent any text overflow */
 }
-#directions span{
+
+#directions span {
   font-family: "Climate Crisis", sans-serif;
   font-variation-settings: "YEAR" 2030;
   color: #286477;
+  text-align: right;
 }
-@media (max-width: 400px) {
+
+@media (max-width: 750px){
+  #create,
+  #create2{
+    top: 45%;
+  }
+}
+
+@media (max-width: 650px){
+  #create,
+  #create2{
+    top: 40%;
+  }
+}
+
+@media (max-width: 550px){
+  #create,
+  #create2{
+    top: 30%;
+  }
+}
+
+@media (max-width: 450px){
+  #create,
+  #create2{
+    top: 25%;
+  }
+}
+
+@media (max-width: 350px){
+  #create,
+  #create2{
+    top: 20%;
+  }
+}
+
+@media (max-width: 300px){
+  #create,
+  #create2{
+    top: 15%;
+  }
+}
+
+
+@media (max-width: 100px) {
 
   .back-button{
     right: 75vw;
@@ -231,59 +283,16 @@ input[type=range]::-moz-range-thumb {
   .clear-button{
     right: 75vw;
   }
-  p#directions{
+  /* p#directions{
     height: fit-content;
     margin-top: 40vh;
     margin-left: 20vw;
-  }
+  } */
   .content{
     margin-top:10vh;
 
   }
   .content p{
     font-size: 1.5em;
-  }
-}
-
-@media (min-width: 400px) and (max-width: 850px) {
-  p#directions{
-    height: fit-content;
-    margin-top: 40vh;
-    margin-left: 20vw;
-    font-size: 25px;
-  }
-  .content{
-    margin-top:25vh;
-  }
-}
-@media (min-width: 850px) and (max-width: 1100px) {
-  p#directions{
-    height: fit-content;
-    margin-top: 40vh;
-    margin-left: 20vw;
-    font-size: 25px;
-  }
-  .content{
-    margin-top: 45vh;
-  }
-}
-@media (min-width: 1100px) and (max-width: 2000px) {
-  p#directions{
-    height: fit-content;
-    margin-top: 40vh;
-    margin-left: 20vw;
-    font-size: 30px;
-  }
-  button.button.clear-button{
-    margin-left: -100px;
-  }
-  .content{
-    margin-top: 80vh;
-  }
-  .color-field-container{
-    top: 85vh;
-  }
-  input.pen-range{
-    top: 75vh;
   }
 }
