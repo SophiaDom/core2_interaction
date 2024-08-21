@@ -28,6 +28,44 @@ h1{
     margin-left:100vw;
     top:52%;
 }
+
+@media screen and (max-width: 700px){
+  #about,
+  #about2{
+    top: 50%
+  }
+}
+@media screen and (max-width: 625px){
+  #about,
+  #about2{
+    top: 40%
+  }
+}
+@media screen and (max-width: 500px){
+  #about,
+  #about2{
+    top: 35%
+  }
+}
+@media screen and (max-width: 450px){
+  #about,
+  #about2{
+    top: 30%
+  }
+}
+@media screen and (max-width: 375px){
+  #about,
+  #about2{
+    top: 25%
+  }
+}
+@media screen and (max-width: 300px){
+  #about,
+  #about2{
+    top: 20%
+  }
+}
+
 #create,
 #create2 {
     opacity: 50%;
@@ -39,58 +77,99 @@ h1{
 #create2{
     margin-left:100vw;
 }
-.content{
-  opacity:1;
+.content {
   transition: opacity 0.5s;
   margin-left: 5vw;
 }
-.content.scrollled {
-  opacity:1;
-}
+
 .otherfont {
   font-family: "Climate Crisis", sans-serif;
   font-variation-settings: "YEAR" 2030;
   color: #286477;
 }
 #hidden7{
-    height: fit-content;
-    margin-top: 80vh;
+  height: fit-content;
+  margin-top: 80vh;
 }
-#hidden7 h1 a {
-    text-align: center;
+
+#hidden7 a{
+font-size: 13vw;
 }
+@keyframes colorLoop {
+0% {
+    color: #286477;
+}
+50% {
+    color:#ffffff;;
+}
+100% {
+    color: #286477;
+}
+}
+
+#hidden7 h1 a,
 #hidden7 a {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
+display: block;
+margin: 0 auto;
+text-align: center;
+animation: colorLoop 8s infinite; /* Adjust the 3s duration to control the speed of the transition */
 }
+
 a{
-    text-decoration: none;
-    color:#286477; 
-    margin-bottom: 40vh;
+  text-decoration: none;
+  color:#286477; 
+  margin-bottom: 40vh;
 }
-a:hover{
-    color:white;
+
+#hidden7 h1 a:hover, #hidden7 a:hover {
+animation-play-state: paused;
+color: white !important;
 }
-p{
-    color:white;
-    padding:10px;
-    margin:40px;
-    margin-left: 7vw;
-    font-size: 3vw;
-    height:100vh;
-    align-content: center;
-    margin-top: 50vh;
-    width: 70%;
+
+p {
+  color: white;
+  padding: 10px;
+  margin: 40px;
+  margin-left: 7vw;
+  font-size: max(2.5vw, 16px);
+  height: 100vh;
+  align-content: center;
+  margin-top: 10vh;
+  width: 70%;
+  margin-bottom: 30vh;
 }
-img{
-    width:15vw;
-    height:auto;
+
+@media screen and (max-width: 330px){
+  p{
+    margin-left: 32px;
+  }
 }
+
+.text > p span {
+  display: block;
+  opacity: 0; /* Start with opacity 0 */
+  transform: translateY(20px); /* Start with a slight downward offset */
+  transition: opacity 5s ease, transform 1.5s ease; /* Smooth transitions */
+}
+
+.text > p span.otherfont {
+  opacity: 0; /* Initial opacity */
+  transform: none; /* No vertical movement */
+  transition: opacity 5s ease; /* Transition only for opacity */
+}
+
+.text.visible > p span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 img{
     position:absolute;
     margin-top: -65vh;
     margin-left: 77vw;
+    width:15vw;
+    height:auto;
 }
 img:hover{
     filter:brightness(500%)
@@ -234,7 +313,8 @@ input[type=range]::-moz-range-thumb {
 
 @media (max-width: 750px){
   #create,
-  #create2{
+  #create2,
+  {
     top: 45%;
   }
 }

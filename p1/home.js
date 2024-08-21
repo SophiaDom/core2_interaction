@@ -49,3 +49,51 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+
+
+
+
+
+// Get the image container and image elements
+// const imageContainer = document.querySelector('.image-container');
+// const image = imageContainer.querySelector('img');
+
+// // Function to set image size and position
+// function setImageSize() {
+//   // Get the screen width and height
+//   const screenWidth = window.innerWidth;
+//   const screenHeight = window.innerHeight;
+
+//   // Set the maximum width and height for the image
+//   const maxWidth = Math.min(screenWidth, 800);
+//   const maxHeight = screenHeight;
+
+//   // Calculate the image's aspect ratio
+//   const aspectRatio = image.naturalWidth / image.naturalHeight;
+
+//   // Set the image's width and height based on the screen size
+//   if (screenWidth > 800) {
+//     if (aspectRatio > 1) {
+//       // Landscape image, set width to max width and calculate height
+//       image.width = maxWidth;
+//       image.height = maxWidth / aspectRatio;
+//     } else {
+//       // Portrait image, set height to max height and calculate width
+//       image.height = maxHeight;
+//       image.width = maxHeight * aspectRatio;
+//     }
+//   } else {
+//     // For screens smaller than 800px, set the image to its natural size
+//     image.width = image.naturalWidth;
+//     image.height = image.naturalHeight;
+//   }
+
+//   // Center the image horizontally and vertically
+//   imageContainer.style.justifyContent = 'center';
+//   imageContainer.style.alignItems = 'center';
+// }
+
+// // Call the function on page load and on window resize
+// setImageSize();
+// window.addEventListener('resize', setImageSize);

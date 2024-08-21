@@ -22,15 +22,43 @@ h1{
     top: 18vh;
 }
 
-img{
-    position: center;
-    align-items: center;
-    margin-left: 10vw;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-right: 10vw;
-    width:80%;
+img {
+    position: absolute;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    top:10px;
+  }
+
+@media screen and (max-width: 1300px) and (min-width: 1200px){
+    img{
+        top: 40px;
+    }
 }
+@media screen and (max-width: 1200px) and (min-width: 750px){
+    img{
+        width: 85%;
+        top: 60px;
+
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 750px){
+    img{
+        top: 100px;
+    }
+}
+
+@media screen and (max-width: 750px){
+    img{
+        width: 100%;
+        top: 100px;
+    }
+}
+    
+
+
 body{
     margin:0;
     padding:0;
@@ -69,19 +97,6 @@ body{
     color:red;
 }
 
-.container {
-    position: relative;
-    width: 100vw;
-    height:100vh;
-    margin: 0 auto;
-}
-  
-.Background-Image {
-    width: auto;
-    height: 100vh;
-    display: block;
-    margin: 0 auto;
-  }
 .title{
     position: absolute;
     top: 28%;
@@ -152,14 +167,10 @@ body{
     transform: rotate(90deg); /* Rotating the element by 90 degrees on hover */
 }
 @media screen and (max-width: 380px) {
-    .title h1{
+    /* .title h1{
         top: -11vh;
-    }
-    .container{
-        margin-top: 30%;
-        width: 110%;
-        margin-left: -5%;
-    }
+    } */
+    
     #buttonImage{
         left: 35%;
         bottom: 40%;
@@ -202,13 +213,11 @@ body{
 }
 
 @media screen and (min-width: 380px) and (max-width: 675px) {
-    .container{
-        margin-top: 10%;
-    }
-    .title h1{
+   
+    /* .title h1{
         top:-5.75vh;
         font-size:2.75vw;
-    }
+    } */
     #buttonImage{
         left:39%;
         top:65vh;
@@ -235,13 +244,11 @@ body{
 }
   
 @media screen and (min-width: 675px) and (max-width: 900px) {
-    .container{
-        margin-top: 15%;
-    }
-    .title h1{
+
+    /* .title h1{
         top: -.15vh;
 
-    }
+    } */
     #hiddenDiv{
         width: 90%;
         height:100px;
@@ -264,12 +271,10 @@ body{
 }
   
 @media screen and (min-width: 900px) and (max-width: 1150px){
-    .container{
-        margin-top: 8%;
-    }
-    .title h1{
+
+    /* .title h1{
         top: 7vh;
-    }
+    } */
     #hiddenDiv{
         width: 20%;
         height: 35%;
@@ -283,9 +288,9 @@ body{
     }
 }
 @media screen and (min-width: 1150px){
-     .title{
+     /* .title{
         margin-top:-20px;
-     }
+     } */
     #hiddenDiv{
         width: 18%;
     }
