@@ -31,7 +31,7 @@ img {
     top:10px;
   }
 
-@media screen and (max-width: 1300px) and (min-width: 1200px){
+@media screen and (min-width: 1200px){
     img{
         top: 40px;
     }
@@ -40,20 +40,37 @@ img {
     img{
         width: 85%;
         top: 60px;
-
     }
 }
 
-@media screen and (max-width: 1000px) and (min-width: 750px){
+@media screen and (max-width: 1000px) and (min-width: 830px){
     img{
         top: 100px;
     }
+    h1 .title{
+        top: 12%
+    }
 }
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 830px){
     img{
         width: 100%;
         top: 100px;
+    }
+}
+@media screen and (max-width: 680px) and (min-width: 510px) {
+    .title h1{
+        top: 11vh;
+    }
+}
+@media screen and (max-width: 510px) and (min-width:400px){
+    .title h1{
+        top: 6vh;
+    }
+}
+@media screen and (max-width:400px){
+    .title h1{
+        top: 2vh;
     }
 }
     
@@ -99,7 +116,7 @@ body{
 
 .title{
     position: absolute;
-    top: 28%;
+    top: 25%;
     left: 45%;
     transform: translate(-50%, -50%);
     text-align: center;
