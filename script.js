@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 touchTimeout = setTimeout(() => {
                     touchCount = 0; // Reset the touch count if no second touch within the delay
-                  }, 250);
+                  }, 1000);
               } else if (touchCount === 2) {
                 clearTimeout(touchTimeout);
                 if (e.target.classList.contains('one')) {
