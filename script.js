@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.one, .two, .three');
     const container = document.querySelector('.container');
     let isHovering = false;
+    let touchStarted = false;
     let touchCount = 0;
 
     function randomizePosition(element) {
@@ -92,12 +93,24 @@ document.addEventListener('DOMContentLoaded', function() {
         element.addEventListener('touchstart', (e) => {
             if (!touchStarted) {
                 touchStarted = true;
-                if (e.target.classList.contains('one')) {
-                    container.classList.add('one-hover');
-                } else if (e.target.classList.contains('two')) {
-                    container.classList.add('two-hover');
-                } else if (e.target.classList.contains('three')) {
-                    container.classList.add('three-hover');
+                touchCount++;
+                if (touchCount === 1) {
+                    if (e.target.classList.contains('one')) {
+                        container.classList.add('one-hover');
+                    } else if (e.target.classList.contains('two')) {
+                        container.classList.add('two-hover');
+                    } else if (e.target.classList.contains('three')) {
+                        container.classList.add('three-hover');
+                    }
+                } else if (touchCount === 2) {
+                    if (e.target.classList.contains('one')) {
+                        window.location.href = 'p1/index.html';
+                    } else if (e.target.classList.contains('two')) {
+                        window.location.href = 'p2/index.html';
+                    } else if (e.target.classList.contains('three')) {
+                        window.location.href = 'p3/index.html';
+                    }
+                    touchCount = 0; // Reset the touch count
                 }
             }
         });
@@ -115,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!e.target.classList.contains('one') && !e.target.classList.contains('two') && !e.target.classList.contains('three')) {
             container.classList.remove('one-hover', 'two-hover', 'three-hover');
             touchStarted = false;
+            touchCount = 0; // Reset the touch count
         }
     });
 });
