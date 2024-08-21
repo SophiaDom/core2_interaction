@@ -71,6 +71,7 @@ img {
 @media screen and (max-width:400px){
     .title h1{
         top: 3.75vh;
+        font-size: 4vw;
     }
 }
     
