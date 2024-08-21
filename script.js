@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.one, .two, .three');
     const container = document.querySelector('.container');
     let isHovering = false;
-    let touchStarted = false;
+    let tapCount = 0;
+    let tapTimeout;
+    let touchStarted = false; // Define touchStarted here
     let touchCount = 0;
 
     function randomizePosition(element) {
@@ -92,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let touchTimeout;
         element.addEventListener('touchstart', (e) => {
-            e.preventDefault(); // Add this line to prevent default behavior
+            e.preventDefault(); 
             if (!touchStarted) {
               touchStarted = true;
               touchCount++;
@@ -107,8 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 touchTimeout = setTimeout(() => {
                     touchCount = 0; // Reset the touch count if no second touch within the delay
                   }, 250);
-
-
               } else if (touchCount === 2) {
                 clearTimeout(touchTimeout);
                 if (e.target.classList.contains('one')) {
