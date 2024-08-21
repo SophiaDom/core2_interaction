@@ -90,30 +90,38 @@ document.addEventListener('DOMContentLoaded', function() {
             }, interval); // resume the interval
         });
 
+        let touchTimeout;
         element.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Add this line to prevent default behavior
             if (!touchStarted) {
-                touchStarted = true;
-                touchCount++;
-                if (touchCount === 1) {
-                    if (e.target.classList.contains('one')) {
-                        container.classList.add('one-hover');
-                    } else if (e.target.classList.contains('two')) {
-                        container.classList.add('two-hover');
-                    } else if (e.target.classList.contains('three')) {
-                        container.classList.add('three-hover');
-                    }
-                } else if (touchCount === 2) {
-                    if (e.target.classList.contains('one')) {
-                        window.location.href = 'p1/index.html';
-                    } else if (e.target.classList.contains('two')) {
-                        window.location.href = 'p2/index.html';
-                    } else if (e.target.classList.contains('three')) {
-                        window.location.href = 'p3/index.html';
-                    }
-                    touchCount = 0; // Reset the touch count
+              touchStarted = true;
+              touchCount++;
+              if (touchCount === 1) {
+                if (e.target.classList.contains('one')) {
+                  container.classList.add('one-hover');
+                } else if (e.target.classList.contains('two')) {
+                  container.classList.add('two-hover');
+                } else if (e.target.classList.contains('three')) {
+                  container.classList.add('three-hover');
                 }
+                touchTimeout = setTimeout(() => {
+                    touchCount = 0; // Reset the touch count if no second touch within the delay
+                  }, 250);
+
+
+              } else if (touchCount === 2) {
+                clearTimeout(touchTimeout);
+                if (e.target.classList.contains('one')) {
+                  window.location.href = 'p1/index.html';
+                } else if (e.target.classList.contains('two')) {
+                  window.location.href = 'p2/index.html';
+                } else if (e.target.classList.contains('three')) {
+                  window.location.href = 'p3/index.html';
+                }
+                touchCount = 0; // Reset the touch count
+              }
             }
-        });
+          });
 
         element.addEventListener('touchend', (e) => {
             touchStarted = false;
