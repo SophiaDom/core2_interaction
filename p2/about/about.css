@@ -89,12 +89,44 @@ h1{
 }
 #hidden7{
   height: fit-content;
-  margin-top: 80vh;
+  position: absolute;
+  font-size: 12vw;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-#hidden7 a{
-font-size: 13vw;
+@media screen and (min-width: 1200px){
+  #hidden7{
+    margin-top: 175vh;
+  }
 }
+@media screen and (max-width: 1200px) and (min-width: 950px){
+  #hidden7{
+    margin-top: 120vh;
+  }
+}
+@media screen and (max-width: 950px) and (min-width: 800px){
+  #hidden7{
+    margin-top: 80vh;
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 650px){
+  #hidden7{
+    margin-top: 60vh;
+  }
+}
+@media screen and (max-width: 650px) and (min-width: 40px){
+  #hidden7{
+    margin-top: 50vh;
+  }
+}
+
+
+
+
+
+
+
 @keyframes colorLoop {
 0% {
     color: #286477;
@@ -338,6 +370,7 @@ input[type=range]::-moz-range-thumb {
   #create2{
     top: 25%;
   }
+  
 }
 
 @media (max-width: 350px){
