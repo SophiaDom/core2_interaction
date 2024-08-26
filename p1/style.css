@@ -38,9 +38,9 @@ img {
         position: absolute;
         left: 5vw;
     }
-    h1 {
-        top: 30vh;
-    }
+   .title h1{
+    top: 18vh;
+   }
 }
 @media screen and (min-width: 1000px){
     img#buttonImage{
@@ -113,7 +113,7 @@ img {
         width: 100%;
     }
     .title h1{
-        top: 42.5vh;
+        top: 44vh;
     }
 }
     
@@ -219,20 +219,21 @@ body{
     width: 4vw;
     position: absolute;
     z-index: 100;
-    transition: transform 0.3s ease;
+    /* transition: transform 0.3s ease;
+    transform-box: fill-box;
+    transform-origin: center center;
+    display: block; */
 }
-#buttonImage:hover {
+/* #buttonImage:hover {
     transform: rotate(90deg); /* Rotating the element by 90 degrees on hover */
-}
+
 @media screen and (max-width: 380px) {
-    /* .title h1{
-        top: -11vh;
-    } */
+
     
     #buttonImage{
         left: 35%;
         bottom: 40%;
-        width: 6vw;
+        width: 8vw;
     }
 
     #hiddenDiv{
@@ -279,7 +280,7 @@ body{
     #buttonImage{
         left:39%;
         top:65vh;
-        width: 40px;
+        width: 5vw;
     }
     #hiddenDiv{
         margin-left: 35%;
