@@ -104,7 +104,7 @@ img {
 }
 @media screen and (max-width: 500px) and (min-width:400px){
     .title h1{
-        top: 36vh;
+        top: 32vh;
     }
 }
 @media screen and (max-width: 400px){
@@ -113,7 +113,11 @@ img {
         width: 100%;
     }
     .title h1{
-        top: 44vh;
+        top: 42vh;
+    }
+    img#buttonImage{
+        width: 7vw;
+        
     }
 }
     
