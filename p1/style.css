@@ -13,13 +13,12 @@ h1{
     font-family: "Cabin Sketch", sans-serif;
     font-weight: 700;
     font-style: normal;
-    height: 100vh;
+    /* height: 100vh; */
     line-height: .8;
     justify-content: center;
     text-align:left;
     position:absolute;
     z-index:1;
-    top: 18vh;
 }
 
 img {
@@ -35,43 +34,86 @@ img {
     img{
         top: 40px;
     }
+    img#buttonImage{
+        position: absolute;
+        left: 5vw;
+    }
+    h1 {
+        top: 30vh;
+    }
 }
-@media screen and (max-width: 1200px) and (min-width: 750px){
+@media screen and (min-width: 1000px){
+    img#buttonImage{
+        position: absolute;
+        left: 5vw;
+    }
+    h1 {
+        top: 10vh;
+    }
+}
+@media screen and (max-width: 1000px) {
+    img#buttonImage{
+        position: absolute;
+        top: 10vh;
+        left: 50vw;
+    }
+}
+@media screen and (max-width: 1200px) and (min-width: 1000px){
     img{
         width: 85%;
         top: 60px;
+    }
+    .title h1{
+        top: 15vh;
     }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 830px){
     img{
-        top: 100px;
+        top: 200px;
+        width: 85%;
     }
-    h1 .title{
-        top: 12%
+    .title h1{
+        top: 31vh;
     }
 }
 
-@media screen and (max-width: 830px){
+@media screen and (max-width: 830px) and (min-width: 650px){
     img{
         width: 100%;
-        top: 100px;
+        top: 30vh;
+    }
+    .title h1{
+        top: 31vh;
     }
 }
-@media screen and (max-width: 680px) and (min-width: 510px) {
+@media screen and (max-width: 650px) and (min-width: 400px){
+    img{
+    top: 45vh;
+    width: 100%;
+    }
+    img#buttonImage{
+
+    }
+
+}
+@media screen and (max-width: 650px) and (min-width: 500px){
     .title h1{
-        top: 11vh;
+        top: 40.5vh;
     }
 }
-@media screen and (max-width: 510px) and (min-width:400px){
+@media screen and (max-width: 500px) and (min-width:400px){
     .title h1{
-        top: 6vh;
+        top: 36vh;
     }
 }
-@media screen and (max-width:400px){
+@media screen and (max-width: 400px){
+    img{
+        top: 55vh;
+        width: 100%;
+    }
     .title h1{
-        top: 3.75vh;
-        font-size: 4vw;
+        top: 42.5vh;
     }
 }
     
@@ -177,8 +219,6 @@ body{
     width: 4vw;
     position: absolute;
     z-index: 100;
-    margin-left: 40px;
-    margin-top: 40px;
     transition: transform 0.3s ease;
 }
 #buttonImage:hover {
